@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Hauptmenü</name>
+    <events>
+        <variable constant="0" name="Links" sid="303138114360214" static="0" type="number">0</variable>
+        <variable constant="0" name="Rechts" sid="1366103820903627" static="0" type="number">3</variable>
+        <event-group collapsed="1" description="" sid="1222738134792616" title="MENU" />
+        <event-block sid="9077405355400612">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="7675830087913518" type="System">
+                    <param id="0" name="Interval (seconds)">0.01</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="3968748379037326" type="Smash">
+                    <param id="0" name="X">Smash.X+5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7015169156945467">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="2570497757847659" type="System">
+                    <param id="0" name="Interval (seconds)">0.5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="8379585434404156" type="System">
+                    <param id="0" name="Object to create">Ball</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">random(50,1200)</param>
+                    <param id="3" name="Y">random(25,50)</param>
+                </action>
+                <action id="-8" name="Set angle" sid="2261965200909836" type="Ball">
+                    <param id="0" name="Angle">90</param>
+                </action>
+                <action id="9" name="Set scale" sid="9842130497750973" type="Ball">
+                    <param id="0" name="Scale">0.1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="1537701921412936" type="Ball">
+                    <param id="0" name="Object">Rauch</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="5541170744453777" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="-9" name="Destroy" sid="9434230168037948" type="Ball" />
+            </actions>
+        </event-block>
+        <event-block sid="8210359729801008">
+            <conditions>
+                <condition id="3" name="On touched object" sid="7270768571803815" type="Touch">
+                    <param id="0" name="Object">Smash</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="7125369443696721" type="System">
+                    <param id="0" name="Layout">MainLayout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8167210841023827">
+            <conditions>
+                <condition id="-4" name="Trigger once while true" sid="2419866000986905" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="1127618417089221" type="Audio">
+                    <param id="0" name="Audio file">Playing_with_Filters-Mike_Vekris</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

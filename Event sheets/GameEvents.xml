@@ -1,0 +1,987 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GameEvents</name>
+    <events>
+        <variable comment="Nummer des aktuellen Levels" constant="0" name="Level" sid="6360370669967457" static="0" type="number">1</variable>
+        <variable comment="Startwert der Zeit pro Level" constant="0" name="timer" sid="1792012801434499" static="0" type="number">100</variable>
+        <variable comment="Leben des Spielers" constant="0" name="health" sid="1331733605004022" static="0" type="number">5</variable>
+        <variable comment="Punktzahl des Spielers im aktuellen Level" constant="0" name="score" sid="2707918650967083" static="0" type="number">0</variable>
+        <variable comment="Gesamtpuntkzahl des Spielers" constant="0" name="EndScore" sid="5829049104951819" static="0" type="number">0</variable>
+        <variable comment="Richtung des Windes" constant="0" name="windrichtung" sid="1995256961061352" static="0" type="number">100</variable>
+        <variable comment="gibt an, ob momentan ein PowerUp aktiv ist (Aktivierung anderer dann nicht möglich)" constant="0" name="activePowerUp" sid="9315719502111642" static="0" type="number">0</variable>
+        <variable constant="0" name="unsterblich" sid="3933892937373019" static="0" type="number">0</variable>
+        <variable constant="0" name="SlowMotion" sid="7772844996600292" static="0" type="number">0</variable>
+        <variable comment="PowerUp - Wind" constant="0" name="wind" sid="5851434311782495" static="0" type="number">0</variable>
+        <variable comment="PowerUp - Sprungfeder" constant="0" name="SprungFeder" sid="8425970525424586" static="0" type="number">0</variable>
+        <event-group description="" sid="673076369030064" title="Box">
+            <sub-events>
+                <event-block sid="4153215555307209">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="8144525499994933" type="Box">
+                            <param id="0" name="Object">Ball</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Spieler verliert ein Leben, falls: Kollision, Box Oberkante nicht höcher als halbe Ballhöhe, Ball größer als Box, Box nicht unsterblich</comment>
+                        <event-block sid="5009317846016239">
+                            <conditions>
+                                <condition id="-6" name="Compare height" sid="6198607567731058" type="Ball">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Height">Box.Height</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="8958156117077931" type="System">
+                                    <param id="0" name="Variable">unsterblich</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="5397673239147928" type="System">
+                                    <param id="0" name="First value">Box.BBoxTop-(Ball.Height/2)</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">Ball.BBoxBottom</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9085106759701388" type="System">
+                                    <param id="0" name="Variable">health</param>
+                                    <param id="1" name="Value">health - 1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>Spielende // muss noch auf GameOver Layer o.ä. geändert werden</comment>
+                                <event-block sid="4826739028613494">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="9392114025831969" type="System">
+                                            <param id="0" name="Variable">health</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set time scale" sid="3393478973766456" type="System">
+                                            <param id="0" name="Time scale">0</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="3477476996592537" type="System">
+                                            <param id="0" name="Layer">0</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="1980813648297534" type="EndScore">
+                                            <param id="0" name="Text">EndScore.Text &amp; score</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="619407303373142" type="System">
+                                            <param id="0" name="Layer">2</param>
+                                            <param id="1" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Box größer als Ball: Box wächst und Spieler erhält Punkte // Formel weiter anpassen</comment>
+                        <event-block sid="3269399506007637">
+                            <conditions>
+                                <condition id="-6" name="Compare height" sid="9880866162442286" type="Ball">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="Height">Box.Height</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="1566624346668684" type="Ball" />
+                                <action id="-6" name="Set height" sid="3673094287852502" type="Box">
+                                    <param id="0" name="Height">Box.Height + (Box.Height - Ball.Height)/50</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="8787832553151978" type="Box">
+                                    <param id="0" name="Width">Box.Width + (Box.Width - Ball.Width)/50</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="9087288223857477" type="System">
+                                    <param id="0" name="Variable">score</param>
+                                    <param id="1" name="Value">score + 1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>PowerUps werden aktiviert </comment>
+                                <event-block sid="9902197275705899">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="3302797633420375" type="Ball">
+                                            <param id="0" name="Instance variable">ballWind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="8585097454430937" type="System">
+                                            <param id="0" name="Variable">wind</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="2645475918624629" type="System">
+                                            <param id="0" name="Variable">activePowerUp</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="7571695501378262" type="System">
+                                            <param id="0" name="Variable">wind</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5751898048675348">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="4102400219597598" type="Ball">
+                                            <param id="0" name="Instance variable">unsterblich</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="8933957476867477" type="System">
+                                            <param id="0" name="Variable">unsterblich</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="1938484238862261" type="System">
+                                            <param id="0" name="Variable">activePowerUp</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="8804566303320423" type="System">
+                                            <param id="0" name="Variable">unsterblich</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="8379852374863148" type="Box">
+                                            <param id="0" name="Animation">&quot;BoxUnsterblich&quot;</param>
+                                            <param id="1" name="From">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1406189150889331">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="3329078058981084" type="Ball">
+                                            <param id="0" name="Instance variable">SlowMotion</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="7734085135870053" type="System">
+                                            <param id="0" name="Variable">SlowMotion</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="2336747410709909" type="System">
+                                            <param id="0" name="Variable">activePowerUp</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="2108396137729205" type="System">
+                                            <param id="0" name="Variable">SlowMotion</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="2695413893601894" type="Ball">
+                                            <param id="0" name="Animation">&quot;SlowMotion&quot;</param>
+                                            <param id="1" name="From">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4565479941327409">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="2392637187322542" type="Ball">
+                                            <param id="0" name="Instance variable">BallFeder</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="142649887215291" type="System">
+                                            <param id="0" name="Variable">SprungFeder</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="2784409191060748" type="System">
+                                            <param id="0" name="Variable">activePowerUp</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="2095215269032445" type="System">
+                                            <param id="0" name="Variable">SprungFeder</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="6220942083470354" type="Box">
+                                            <param id="0" name="Animation">&quot;Sprungfeder&quot;</param>
+                                            <param id="1" name="From">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8949243090239761">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="794116246861827" title="Ball">
+            <sub-events>
+                <variable constant="0" name="größenvarianz" sid="300484216310812" static="0" type="number">0</variable>
+                <variable constant="0" name="WidthFaktor" sid="7028852875881038" static="0" type="number">0</variable>
+                <variable comment="Zufallszahl zur Bestimmung der Ballgröße" constant="0" name="randomSize" sid="643804296281566" static="0" type="number">0</variable>
+                <variable comment="Zufallszahl zur Erzeugung von PowerUps" constant="0" name="randomPowerUp" sid="1310668004178316" static="0" type="number">0</variable>
+                <comment>Ball wird zerstört wenn er das Spielfeld verlässt </comment>
+                <event-block sid="8746992280879468">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="9748577753576999" type="Ball">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">800</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="7442404688246501" type="Ball" />
+                    </actions>
+                </event-block>
+                <comment>zufälliger Ballspawn // Formel weiter anpassen</comment>
+                <event-block sid="3047021848711285">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="1555897303080732" type="System">
+                            <param id="0" name="Interval (seconds)">random(0.5)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4092109790259196" type="System">
+                            <param id="0" name="Variable">randomSize</param>
+                            <param id="1" name="Value">random(30,220)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6486667934961636" type="System">
+                            <param id="0" name="Variable">größenvarianz</param>
+                            <param id="1" name="Value">random(10,60)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1961829694235685" type="System">
+                            <param id="0" name="Variable">WidthFaktor</param>
+                            <param id="1" name="Value">random(1,1.3)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8983942963170054" type="System">
+                            <param id="0" name="Variable">randomPowerUp</param>
+                            <param id="1" name="Value">random(100)</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9057531089576223" type="System">
+                            <param id="0" name="Object to create">Ball</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">random(1280)</param>
+                            <param id="3" name="Y">-100</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="3117688224387814" type="Ball">
+                            <param id="0" name="Width">(Ball.Width * WidthFaktor)  + (Box.Width/randomSize)*größenvarianz</param>
+                            <param id="1" name="Height">(Ball.Height * WidthFaktor) + (Box.Height/randomSize)*größenvarianz</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="2841335858252441" type="Ball">
+                            <param id="0" name="Angle">80 + random(20)</param>
+                        </action>
+                        <action id="2" name="Stop" sid="9240550375733181" type="Ball" />
+                    </actions>
+                    <sub-events>
+                        <comment>Setze PowerUps // hier erstmal nur Wind von links mit 10%iger Wahrscheinlichkeit</comment>
+                        <event-block sid="3558332774818642">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7257009255996373" type="System">
+                                    <param id="0" name="Variable">randomPowerUp</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="782617774979743" type="Ball">
+                                    <param id="0" name="Instance variable">ballWind</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="2546927515213786" type="Ball">
+                                    <param id="0" name="Width">70</param>
+                                    <param id="1" name="Height">70</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="4355119578296952" type="Ball">
+                                    <param id="0" name="Animation">&quot;wind&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action behavior="Movement" id="2" name="Set gravity" sid="8589932906061463" type="Ball">
+                                    <param id="0" name="Gravity">80</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3366055310669514">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="8913183100172094" type="System">
+                                    <param id="0" name="Variable">randomPowerUp</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="2111484727213936" type="System">
+                                    <param id="0" name="Variable">randomPowerUp</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">15</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="1296524571883719" type="Ball">
+                                    <param id="0" name="Instance variable">unsterblich</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="3025751914626417" type="Ball">
+                                    <param id="0" name="Width">70</param>
+                                    <param id="1" name="Height">70</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="7012745727754963" type="Ball">
+                                    <param id="0" name="Animation">&quot;Banana&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action behavior="Movement" id="2" name="Set gravity" sid="4344944506895893" type="Ball">
+                                    <param id="0" name="Gravity">80</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7548794969747654">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="6492615806471593" type="System">
+                                    <param id="0" name="Variable">randomPowerUp</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">20</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="7883221264921444" type="System">
+                                    <param id="0" name="Variable">randomPowerUp</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">25</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="1659360706168719" type="Ball">
+                                    <param id="0" name="Instance variable">SlowMotion</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="6965253280666731" type="Ball">
+                                    <param id="0" name="Width">70</param>
+                                    <param id="1" name="Height">70</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="9371327319057078" type="Ball">
+                                    <param id="0" name="Animation">&quot;SlowMotion&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action behavior="Movement" id="2" name="Set gravity" sid="5814667268644449" type="Ball">
+                                    <param id="0" name="Gravity">80</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3993369896727049">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="36572325796745" type="System">
+                                    <param id="0" name="Variable">randomPowerUp</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">30</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="610660495545253" type="System">
+                                    <param id="0" name="Variable">randomPowerUp</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">35</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="6438995323241803" type="Ball">
+                                    <param id="0" name="Instance variable">BallFeder</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="9242411413837686" type="Ball">
+                                    <param id="0" name="Width">70</param>
+                                    <param id="1" name="Height">70</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="5322334262906841" type="Ball">
+                                    <param id="0" name="Animation">&quot;Sprungfeder&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action behavior="Movement" id="2" name="Set gravity" sid="8084802385108782" type="Ball">
+                                    <param id="0" name="Gravity">80</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Aktiviere PowerUps, falls erforderlich</comment>
+                        <event-block sid="6545039846931474">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1005592258673691" type="System">
+                                    <param id="0" name="Variable">wind</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="9573132931002964">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="9665079243561288" type="System">
+                                            <param id="0" name="Variable">windrichtung</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">50</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-8" name="Set angle" sid="3007313608446051" type="Ball">
+                                            <param id="0" name="Angle">120 + random(50)</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="78727560326405" type="System">
+                                            <param id="0" name="Seconds">5</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="1628700956437077" type="System">
+                                            <param id="0" name="Variable">wind</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="3998451000843547" type="System">
+                                            <param id="0" name="Variable">windrichtung</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8976038963795538">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="7857493925143386" type="System">
+                                            <param id="0" name="Variable">windrichtung</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">50</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-8" name="Set angle" sid="4895001223561012" type="Ball">
+                                            <param id="0" name="Angle">30+random(30)</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="2624701615247119" type="System">
+                                            <param id="0" name="Seconds">5</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="7919575362523913" type="System">
+                                            <param id="0" name="Variable">wind</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="2923828543714853" type="System">
+                                            <param id="0" name="Variable">windrichtung</param>
+                                            <param id="1" name="Value">100</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="329588156545937">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="8554397857832381" type="System">
+                                    <param id="0" name="Variable">unsterblich</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9196029336577482" type="System">
+                                    <param id="0" name="Variable">activePowerUp</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="1975806773929544" type="System">
+                                    <param id="0" name="Seconds">2.75</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="5216979773972457" type="System">
+                                    <param id="0" name="Variable">unsterblich</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="4939108985016355" type="Box">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="770799963091126" type="System">
+                                    <param id="0" name="Variable">activePowerUp</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1269050595197318">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="8891370659631521" type="System">
+                                    <param id="0" name="Variable">SlowMotion</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set time scale" sid="7929548636842578" type="System">
+                                    <param id="0" name="Time scale">0.5</param>
+                                </action>
+                                <action behavior="Movement" id="0" name="Set speed" sid="6226463668501523" type="Ball">
+                                    <param id="0" name="Speed">800</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="804319497605581" type="System">
+                                    <param id="0" name="Seconds">3</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="7965635747832697" type="System">
+                                    <param id="0" name="Variable">SlowMotion</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Movement" id="0" name="Set speed" sid="2499437649072691" type="Ball">
+                                    <param id="0" name="Speed">400</param>
+                                </action>
+                                <action id="-13" name="Set time scale" sid="4096141266683875" type="System">
+                                    <param id="0" name="Time scale">1.0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2767482626658714">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="8418009885478128" type="System">
+                                    <param id="0" name="Variable">SprungFeder</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="7152476931935345" type="System">
+                                    <param id="0" name="Variable">activePowerUp</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="5301739967407031" type="Box">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="7729648529677851" type="Box">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="649308902287654" type="System">
+                                    <param id="0" name="Seconds">10</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="2220436795690421" type="System">
+                                    <param id="0" name="Variable">SprungFeder</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="9162837746113334" type="Box">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="3791633934933626" type="Box">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="7935647763297555" type="Box">
+                                    <param id="0" name="Animation">&quot;default&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="6699250143644658" type="System">
+                                    <param id="0" name="Variable">activePowerUp</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>!!! automatisches Springen klappt noch nicht... !!!</comment>
+                                <event-block sid="9715916971199205">
+                                    <conditions>
+                                        <condition behavior="Platform" id="2" name="Is on floor" sid="7907714393979595" type="Box" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="8121110663200883" type="Box">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="5931551502693997" title="HUD" />
+        <event-block sid="3828341128980674">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="8829205759344554" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="5257555989656322" type="Health">
+                    <param id="0" name="Text">&quot; Leben: &quot; &amp; health</param>
+                </action>
+                <action id="0" name="Set text" sid="3103818246107101" type="Score">
+                    <param id="0" name="Text">&quot; Punkte: &quot; &amp; score</param>
+                </action>
+                <action id="0" name="Set text" sid="5632506333486519" type="Zeit">
+                    <param id="0" name="Text">&quot; Zeit: &quot; &amp; timer</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6598384934099232">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="5970070713758294" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="7254147766930928" type="System">
+                    <param id="0" name="Variable">timer</param>
+                    <param id="1" name="Value">timer  - 1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Spielende, falls Zeit abgelaufen //muss noch auf GameOver Layer o.ä. geändert werden</comment>
+        <event-block sid="5919766892282906">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="5584332293392717" type="System">
+                    <param id="0" name="Variable">timer</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="9730032805507277" type="System">
+                    <param id="0" name="Time scale">0.1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="3629161169067143" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="0" name="Set text" sid="4120832025809803" type="EndScore">
+                    <param id="0" name="Text">EndScore.Text &amp; score</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="896171960896145" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <variable constant="0" name="Fortsetzen" sid="9650611993275449" static="0" type="number">0</variable>
+        <variable constant="0" name="Pause" sid="4060764381964021" static="0" type="number">0</variable>
+        <variable constant="0" name="Move" sid="7849671263312014" static="0" type="number">0</variable>
+        <variable constant="0" name="Counter" sid="2308717716640773" static="0" type="number">3</variable>
+        <event-group collapsed="1" description="" sid="5027483631054631" title="Pause" />
+        <event-block sid="4795533819427023">
+            <conditions>
+                <condition id="2" name="Key is down" sid="9110604239068535" type="Keyboard">
+                    <param id="0" name="Key">27 (Esc)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="4073578394584739" type="System">
+                    <param id="0" name="Variable">health</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="1626794190812608" type="System">
+                    <param id="0" name="Time scale">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="8344427183506887" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="6814635090156549" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="9841767079930662" type="System">
+                    <param id="0" name="Variable">Pause</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8085821261727665">
+            <conditions>
+                <condition id="3" name="On touched object" sid="4526980111718139" type="Touch">
+                    <param id="0" name="Object">Fortsetzen</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="2832822256269854" type="System">
+                    <param id="0" name="Time scale">0.1</param>
+                </action>
+                <action id="-9" name="Set value" sid="2906380968952268" type="System">
+                    <param id="0" name="Variable">Fortsetzen</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="7109188689255235" type="Count">
+                    <param id="0" name="Text">Counter</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5120472116875752" type="Count">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3072826715396483">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3979803262620785" type="System">
+                    <param id="0" name="Variable">Fortsetzen</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="8630518378004852" type="System">
+                    <param id="0" name="Interval (seconds)">0.05</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="7071842938741925" type="System">
+                    <param id="0" name="Variable">Counter</param>
+                    <param id="1" name="Value">Counter-1</param>
+                </action>
+                <action id="0" name="Set text" sid="7955175401595503" type="Count">
+                    <param id="0" name="Text">Counter</param>
+                </action>
+                <action id="0" name="Set text" sid="407182910786332" type="CounterEnd">
+                    <param id="0" name="Text">Counter</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6008314740664196">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2907735989892751" type="System">
+                    <param id="0" name="Variable">Counter</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="3991586921495842" type="System">
+                    <param id="0" name="Variable">Pause</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="6106861542875446" type="System">
+                    <param id="0" name="Variable">Fortsetzen</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="4389074314906875" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="2758412856056639" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="6490868917719696" type="System">
+                    <param id="0" name="Time scale">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="8951098733206963" type="Count">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="481663356738946" type="System">
+                    <param id="0" name="Variable">Counter</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="-9" name="Set value" sid="5290328711225187" type="System">
+                    <param id="0" name="Variable">Pause</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Testimplementierung des Boxhandschuhs, nicht finish!!! Druecke Leertaste</comment>
+        <variable constant="0" name="Handschuh" sid="8864340795170654" static="0" type="number">-2</variable>
+        <event-block sid="7222880355193281">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="1649697152500975" type="Handschuh">
+                    <param id="0" name="Object">Ball</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="389132687394706" type="Ball">
+                    <param id="0" name="X">random(50,640)</param>
+                    <param id="1" name="Y">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1611900629940911">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="6944454796075759" type="Keyboard">
+                    <param id="0" name="Key">32 (Leer)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="454170719592069" type="System">
+                    <param id="0" name="Variable">Move</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="6740728620356349" type="System">
+                    <param id="0" name="Variable">Move</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="4739538700101111" type="Box">
+                    <param id="0" name="Object">Handschuh</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-24" name="Move to top" sid="4370074703086899" type="Box" />
+                <action id="-24" name="Move to top" sid="6032406167004787" type="Zeit" />
+                <action id="-24" name="Move to top" sid="9666768042398974" type="Score" />
+                <action id="-24" name="Move to top" sid="9188532919170189" type="Health" />
+                <action id="-16" name="Wait" sid="9377855642419147" type="System">
+                    <param id="0" name="Seconds">0.8</param>
+                </action>
+                <action id="-9" name="Set value" sid="3349193300906783" type="System">
+                    <param id="0" name="Variable">Move</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="7521854578053816" type="System">
+                    <param id="0" name="Variable">Handschuh</param>
+                    <param id="1" name="Value">-2</param>
+                </action>
+                <action id="-9" name="Destroy" sid="4670750965403674" type="Handschuh" />
+            </actions>
+        </event-block>
+        <event-block sid="5529166871138364">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="6660723713510784" type="System">
+                    <param id="0" name="Variable">Move</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="6947703418010634" type="System">
+                    <param id="0" name="Interval (seconds)">0.01</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-23" name="Move at angle" sid="9625291464837319" type="Handschuh">
+                    <param id="0" name="Angle">90</param>
+                    <param id="1" name="Distance">-2</param>
+                </action>
+                <action id="-1" name="Set X" sid="2370484625520354" type="Handschuh">
+                    <param id="0" name="X">Box.X</param>
+                </action>
+                <action id="-2" name="Set Y" sid="6902710808480127" type="Handschuh">
+                    <param id="0" name="Y">box.Y+Handschuh</param>
+                </action>
+                <action id="-9" name="Set value" sid="7581157677875646" type="System">
+                    <param id="0" name="Variable">Handschuh</param>
+                    <param id="1" name="Value">Handschuh-2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="3734160441398521" title="End" />
+        <event-block sid="931171995374526">
+            <conditions>
+                <condition id="3" name="On touched object" sid="2784466382007707" type="Touch">
+                    <param id="0" name="Object">Restart</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="2131446579276612" type="System">
+                    <param id="0" name="Time scale">0.1</param>
+                </action>
+                <action id="-9" name="Set value" sid="6803241485616043" type="System">
+                    <param id="0" name="Variable">Fortsetzen</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="2516329665514181" type="CounterEnd">
+                    <param id="0" name="Text">Counter</param>
+                </action>
+                <action id="-15" name="Set visible" sid="7583875248633637" type="CounterEnd">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1806951071364679">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="5216310495331766" type="System">
+                    <param id="0" name="Variable">Counter</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9199236157529638" type="System">
+                    <param id="0" name="Variable">Pause</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="3299884279413453" type="System">
+                    <param id="0" name="Variable">Level</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="1122733819644126" type="System">
+                    <param id="0" name="Variable">Fortsetzen</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="1597947786811853" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="9562002868698838" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="6441397763455037" type="System">
+                    <param id="0" name="Time scale">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3570206087455974" type="CounterEnd">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="6275490351077337" type="System">
+                    <param id="0" name="Variable">EndScore</param>
+                    <param id="1" name="Value">EndScore + score</param>
+                </action>
+                <action id="-9" name="Set value" sid="5423232761290327" type="System">
+                    <param id="0" name="Variable">timer</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="4398223238001607" type="System">
+                    <param id="0" name="Variable">health</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="-9" name="Set value" sid="8213351405411471" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="6736257108804341" type="System">
+                    <param id="0" name="Variable">windrichtung</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="9130949037474622" type="System">
+                    <param id="0" name="Variable">activePowerUp</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="3306082989525922" type="System">
+                    <param id="0" name="Variable">unsterblich</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="4339642156397" type="System">
+                    <param id="0" name="Variable">SlowMotion</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="6391263131139034" type="System">
+                    <param id="0" name="Variable">wind</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="163447685336335" type="System">
+                    <param id="0" name="Variable">SprungFeder</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="5" name="Set frame" sid="3183684732052906" type="Ball">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="4277790283091325">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7175169692148017" type="System">
+                            <param id="0" name="Variable">Level</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1975054000326056" type="System">
+                            <param id="0" name="Variable">Level</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="9455854732676583" type="System">
+                            <param id="0" name="Layout">Level 2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>usw...</comment>
+                <event-block sid="6819490555424965">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1517244624514265" type="System">
+                            <param id="0" name="Variable">Level</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="480031042047094" type="System">
+                            <param id="0" name="Variable">Level</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
