@@ -142,6 +142,11 @@ csx/
 # Windows Store app package directory
 AppPackages/
 
+# Construct 2 files
+*.capx.autosave
+*.capx.backup1
+*.uistate.xml
+
 # Others
 sql/
 *.Cache
