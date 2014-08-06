@@ -14,6 +14,20 @@
         <variable constant="0" name="SlowMotion" sid="7772844996600292" static="0" type="number">0</variable>
         <variable comment="PowerUp - Wind" constant="0" name="wind" sid="5851434311782495" static="0" type="number">0</variable>
         <variable comment="PowerUp - Sprungfeder" constant="0" name="SprungFeder" sid="8425970525424586" static="0" type="number">0</variable>
+        <event-block sid="9593476606523785">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="2575768051553658" type="System" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="7623297939101704" type="Audio" />
+                <action id="0" name="Play" sid="4759031421753817" type="Audio">
+                    <param id="0" name="Audio file">Leve1Music</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;level1&quot;</param>
+                </action>
+            </actions>
+        </event-block>
         <event-group description="" sid="673076369030064" title="Box">
             <sub-events>
                 <event-block sid="4153215555307209">
