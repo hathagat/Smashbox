@@ -110,8 +110,8 @@
                     </properties>
                     <instance-variables>
                         <ballWind>0</ballWind>
-                        <unsterblich>0</unsterblich>
-                        <SlowMotion>0</SlowMotion>
+                        <ballUnsterblich>0</ballUnsterblich>
+                        <ballSlowMotion>0</ballSlowMotion>
                         <BallFeder>0</BallFeder>
                     </instance-variables>
                     <behavior-instances>
