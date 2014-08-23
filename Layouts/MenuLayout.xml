@@ -156,11 +156,61 @@
             <force-own-texture>0</force-own-texture>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
-            <instances />
+            <instances>
+                <instance type="MenuBack" uid="79">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>75</x>
+                        <y>645</y>
+                        <z>0</z>
+                        <width>100</width>
+                        <height>100</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionsText" uid="80">
+                    <properties>
+                        <text>keine Ahnung evtl. Schwierigkeit</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-48,400,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>424</x>
+                        <y>212</y>
+                        <z>0</z>
+                        <width>441</width>
+                        <height>147</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
             <effects />
         </layer>
         <layer name="CreditsLayer" sid="6784350528887107">
-            <initially-visible>1</initially-visible>
+            <initially-visible>0</initially-visible>
             <background-color>0,0,0</background-color>
             <transparent>1</transparent>
             <parallax>
@@ -172,7 +222,273 @@
             <force-own-texture>0</force-own-texture>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
-            <instances />
+            <instances>
+                <instance type="MenuCreditsText1" uid="70">
+                    <properties>
+                        <text>The Team</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-85,400,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>336</x>
+                        <y>17</y>
+                        <z>0</z>
+                        <width>606</width>
+                        <height>148</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuCreditsText2" uid="71">
+                    <properties>
+                        <text>Programmers</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-64,400,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>50</x>
+                        <y>158</y>
+                        <z>0</z>
+                        <width>460</width>
+                        <height>90</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuCreditsText3" uid="72">
+                    <properties>
+                        <text>Christoph Manske Norman Nusse</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-37,400,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>51</x>
+                        <y>251</y>
+                        <z>0</z>
+                        <width>460</width>
+                        <height>110</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuCreditsText4" uid="73">
+                    <properties>
+                        <text>Artist</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-64,400,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>41</x>
+                        <y>394</y>
+                        <z>0</z>
+                        <width>460</width>
+                        <height>90</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuCreditsText5" uid="74">
+                    <properties>
+                        <text>Felix Reinemann</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-37,400,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>30</x>
+                        <y>488</y>
+                        <z>0</z>
+                        <width>460</width>
+                        <height>60</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuCreditsText6" uid="75">
+                    <properties>
+                        <text>Audio</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-64,400,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>631</x>
+                        <y>152</y>
+                        <z>0</z>
+                        <width>630</width>
+                        <height>90</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuCreditsText7" uid="76">
+                    <properties>
+                        <text>hier AudioCredits</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-37,400,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>625</x>
+                        <y>250</y>
+                        <z>0</z>
+                        <width>630</width>
+                        <height>70</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuCreditsText8" uid="77">
+                    <properties>
+                        <text>Contact</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-64,400,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>627</x>
+                        <y>397</y>
+                        <z>0</z>
+                        <width>630</width>
+                        <height>90</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuCreditsText9" uid="78">
+                    <properties>
+                        <text>triple2@programmer.net</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-37,400,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>616</x>
+                        <y>491</y>
+                        <z>0</z>
+                        <width>630</width>
+                        <height>70</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuBack" uid="69">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>75</x>
+                        <y>645</y>
+                        <z>0</z>
+                        <width>100</width>
+                        <height>100</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
             <effects />
         </layer>
     </layers>

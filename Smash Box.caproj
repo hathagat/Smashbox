@@ -462,6 +462,55 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="MenuCreditsText1" sid="8935580416188025">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuCreditsText2" sid="1998664516437535">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuCreditsText3" sid="9051919785512908">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuCreditsText4" sid="7454745031713118">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuCreditsText5" sid="2758153634641605">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuCreditsText6" sid="2460233342335849">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuCreditsText7" sid="6119959422394629">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuCreditsText8" sid="6522056573387292">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuCreditsText9" sid="3945895562757003">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuBack" sid="2245670386904936">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2365477827900689" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.15" y="0.15" />
+                            <point x="0.5" y="0" />
+                            <point x="0.85" y="0.15" />
+                            <point x="1" y="0.5" />
+                            <point x="0.85" y="0.85" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15" y="0.85" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MenuOptionsText" sid="6820201536298326">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">
