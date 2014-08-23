@@ -3,12 +3,15 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>GameEvents</name>
     <events>
+        <comment>GameState</comment>
         <variable comment="Nummer des aktuellen Levels" constant="0" name="level" sid="6360370669967457" static="0" type="number">1</variable>
         <variable comment="Zeit pro Level" constant="0" name="timer" sid="1792012801434499" static="0" type="number">100</variable>
+        <variable comment="Pausemenü aktiv" constant="0" name="pause" sid="4060764381964021" static="0" type="number">0</variable>
+        <comment>Spieler</comment>
         <variable comment="Leben des Spielers" constant="0" name="health" sid="1331733605004022" static="0" type="number">5</variable>
         <variable comment="Punktzahl des Spielers im aktuellen Level" constant="0" name="score" sid="2707918650967083" static="0" type="number">0</variable>
         <variable comment="Gesamtpuntkzahl des Spielers" constant="0" name="finalScore" sid="5829049104951819" static="0" type="number">0</variable>
-        <variable comment="Pausemenü aktiv" constant="0" name="pause" sid="4060764381964021" static="0" type="number">0</variable>
+        <comment>PowerUps</comment>
         <variable comment="gibt an, ob momentan ein PowerUp aktiv ist (Aktivierung anderer dann nicht möglich)" constant="0" name="activePowerUp" sid="9315719502111642" static="0" type="number">0</variable>
         <variable comment="PowerUp - Unsterblichkeit" constant="0" name="unsterblich" sid="3933892937373019" static="0" type="number">0</variable>
         <variable comment="PowerUp - SlowMotion" constant="0" name="slowMotion" sid="7772844996600292" static="0" type="number">0</variable>
@@ -421,11 +424,11 @@
                             </conditions>
                             <actions>
                                 <action id="-9" name="Destroy" sid="1566624346668684" type="Ball" />
-                                <action id="-6" name="Set height" sid="3673094287852502" type="Box">
-                                    <param id="0" name="Height">Box.Height + (Box.Height - Ball.Height)/50</param>
-                                </action>
                                 <action id="-5" name="Set width" sid="8787832553151978" type="Box">
-                                    <param id="0" name="Width">Box.Height</param>
+                                    <param id="0" name="Width">Box.Width + (Box.Width - Ball.Width)/50</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="3673094287852502" type="Box">
+                                    <param id="0" name="Height">Box.Width</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="9087288223857477" type="System">
                                     <param id="0" name="Variable">score</param>
@@ -621,7 +624,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>PowerUp Sprungfeder: Box springt automatisch</comment>
+                <comment>PowerUp Sprungfeder: Höhe des Box-Sprite wächst wegen der Feder</comment>
                 <event-block sid="9715916971199205">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="732778360466054" type="System">
@@ -629,13 +632,25 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
-                        <condition behavior="Platform" id="2" name="Is on floor" sid="7907714393979595" type="Box" />
                     </conditions>
                     <actions>
-                        <action behavior="Platform" id="7" name="Simulate control" sid="8121110663200883" type="Box">
-                            <param id="0" name="Control">2</param>
+                        <action id="-6" name="Set height" sid="8659363576878566" type="Box">
+                            <param id="0" name="Height">Box.Width * 1.25</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <comment>Box springt automatisch</comment>
+                        <event-block sid="437178475438324">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="7907714393979595" type="Box" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="8121110663200883" type="Box">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>Testimplementierung des Boxhandschuhs, nicht finish!!! Druecke Leertaste</comment>
                 <variable constant="0" name="Move" sid="7849671263312014" static="0" type="number">0</variable>
@@ -836,7 +851,7 @@
                             </conditions>
                             <actions>
                                 <action id="9" name="Set scale" sid="8110524215632111" type="Continue">
-                                    <param id="0" name="Scale">1.2</param>
+                                    <param id="0" name="Scale">0.9</param>
                                 </action>
                                 <action id="-16" name="Set opacity" sid="3238017183697647" type="Continue">
                                     <param id="0" name="Opacity">100</param>
@@ -851,7 +866,7 @@
                             </conditions>
                             <actions>
                                 <action id="9" name="Set scale" sid="8645773802279308" type="Continue">
-                                    <param id="0" name="Scale">1</param>
+                                    <param id="0" name="Scale">0.7</param>
                                 </action>
                                 <action id="-16" name="Set opacity" sid="144954734341716" type="Continue">
                                     <param id="0" name="Opacity">75</param>
@@ -884,7 +899,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="9" name="Set scale" sid="2561926799476665" type="Continue">
-                                            <param id="0" name="Scale">1.2</param>
+                                            <param id="0" name="Scale">0.9</param>
                                         </action>
                                         <action id="-16" name="Set opacity" sid="4131186890949775" type="Continue">
                                             <param id="0" name="Opacity">100</param>
@@ -893,7 +908,7 @@
                                             <param id="0" name="Time scale">1</param>
                                         </action>
                                         <action id="-16" name="Wait" sid="6844716348670906" type="System">
-                                            <param id="0" name="Seconds">0.5</param>
+                                            <param id="0" name="Seconds">0.3</param>
                                         </action>
                                         <action id="-9" name="Set value" sid="2264424571499171" type="System">
                                             <param id="0" name="Variable">pause</param>
@@ -937,7 +952,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="9" name="Set scale" sid="910704591063231" type="Continue">
-                                            <param id="0" name="Scale">1.2</param>
+                                            <param id="0" name="Scale">0.9</param>
                                         </action>
                                         <action id="-16" name="Set opacity" sid="4703935764514572" type="Continue">
                                             <param id="0" name="Opacity">100</param>
