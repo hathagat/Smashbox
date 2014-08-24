@@ -19,6 +19,9 @@
                             <param id="3" name="Volume">0</param>
                             <param id="1" name="Tag (optional)">&quot;menu&quot;</param>
                         </action>
+                        <action id="4" name="Preload" sid="3240435735469904" type="Audio">
+                            <param id="0" name="Audio file">Leve1Music</param>
+                        </action>
                         <action id="-16" name="Wait" sid="9159480685805311" type="System">
                             <param id="0" name="Seconds">2</param>
                         </action>
@@ -233,7 +236,7 @@
                                     <param id="0" name="Seconds">0.3</param>
                                 </action>
                                 <action id="-25" name="Go to layout (by name)" sid="8804487023472019" type="System">
-                                    <param id="0" name="Layout">&quot;Level1Layout&quot;</param>
+                                    <param id="0" name="Layout">&quot;GameLayout&quot;</param>
                                 </action>
                             </actions>
                         </event-block>

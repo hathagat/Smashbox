@@ -515,10 +515,7 @@
     <families />
     <layout-folder expanded="1">
         <layout>MenuLayout.xml</layout>
-        <layout>Level1Layout.xml</layout>
-        <layout>Level2Layout.xml</layout>
-        <layout>Level3Layout.xml</layout>
-        <layout>Level4Layout.xml</layout>
+        <layout>GameLayout.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>GameEvents.xml</event-sheet>
@@ -548,10 +545,15 @@
         </global-instance>
         <global-instance type="Mouse" uid="49" />
     </global-instances>
-    <sounds-folder expanded="1" />
+    <sounds-folder expanded="1">
+        <file name="Explosion.ogg" />
+    </sounds-folder>
     <music-folder expanded="1">
         <file name="MenuMusic.ogg" />
         <file name="Leve1Music.ogg" />
+        <file name="Level2Music.ogg" />
+        <file name="Level4Music.ogg" />
+        <file name="Level3Music.ogg" />
     </music-folder>
     <files-folder expanded="1">
         <file-folder expanded="1" name="Icons">

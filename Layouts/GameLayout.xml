@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>Level3Layout</name>
-    <sid>1512551634377359</sid>
+    <name>GameLayout</name>
+    <sid>8143588397415772</sid>
     <event-sheet>GameEvents</event-sheet>
     <size>
         <width>1280</width>
@@ -13,7 +13,7 @@
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
-        <layer name="GameLayer" sid="399516961445715">
+        <layer name="GameLayer" sid="5911778048977416">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>0</transparent>
@@ -27,7 +27,51 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="BackgroundLevel3" uid="24">
+                <instance type="BackgroundLevel4" uid="6">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>640</x>
+                        <y>411</y>
+                        <z>0</z>
+                        <width>1280</width>
+                        <height>1280</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="BackgroundLevel3" uid="5">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>640</x>
+                        <y>414</y>
+                        <z>0</z>
+                        <width>1280</width>
+                        <height>908</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="BackgroundLevel2" uid="81">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -49,7 +93,29 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Handschuh" uid="27">
+                <instance type="BackgroundLevel1" uid="0">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Disabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>634.5</x>
+                        <y>362.5</y>
+                        <z>0</z>
+                        <width>1295</width>
+                        <height>815</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Handschuh" uid="44">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -71,7 +137,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Ball" uid="28">
+                <instance type="Ball" uid="2">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -116,7 +182,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Boden" uid="29">
+                <instance type="Boden" uid="25">
                     <properties>
                         <initial-visibility>Invisible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -145,7 +211,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Box" uid="30">
+                <instance type="Box" uid="1">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -197,7 +263,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Score" uid="31">
+                <instance type="Score" uid="3">
                     <properties>
                         <text> Punkte: </text>
                         <initial-visibility>Visible</initial-visibility>
@@ -224,7 +290,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Health" uid="32">
+                <instance type="Health" uid="4">
                     <properties>
                         <text> Leben: </text>
                         <initial-visibility>Visible</initial-visibility>
@@ -251,7 +317,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Zeit" uid="39">
+                <instance type="Zeit" uid="17">
                     <properties>
                         <text> Zeit: </text>
                         <initial-visibility>Visible</initial-visibility>
@@ -278,7 +344,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="GetReady" uid="40">
+                <instance type="GetReady" uid="52">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -303,7 +369,7 @@
             </instances>
             <effects />
         </layer>
-        <layer name="EndLayer" sid="7066375664520385">
+        <layer name="MenuLayer" sid="5055525410160875">
             <initially-visible>0</initially-visible>
             <background-color>0,0,0</background-color>
             <transparent>1</transparent>
@@ -317,7 +383,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="SmashedBox" uid="41">
+                <instance type="SmashedBox" uid="19">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -339,7 +405,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="ScoreFinal" uid="42">
+                <instance type="ScoreFinal" uid="21">
                     <properties>
                         <text> Gesamtpunkte: </text>
                         <initial-visibility>Visible</initial-visibility>
@@ -366,7 +432,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="GameOver" uid="45">
+                <instance type="GameOver" uid="20">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -388,7 +454,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Logo" uid="51">
+                <instance type="Logo" uid="34">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -413,7 +479,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="LevelScore" uid="55">
+                <instance type="LevelScore" uid="53">
                     <properties>
                         <text> dieses Level: </text>
                         <initial-visibility>Visible</initial-visibility>
@@ -440,7 +506,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Continue" uid="56">
+                <instance type="Continue" uid="54">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>

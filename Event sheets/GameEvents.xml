@@ -7,6 +7,7 @@
         <variable comment="Nummer des aktuellen Levels" constant="0" name="level" sid="6360370669967457" static="0" type="number">1</variable>
         <variable comment="Zeit pro Level" constant="0" name="timer" sid="1792012801434499" static="0" type="number">100</variable>
         <variable comment="Pausemenü aktiv" constant="0" name="pause" sid="4060764381964021" static="0" type="number">0</variable>
+        <variable comment="Spielende" constant="0" name="gameOver" sid="7216791146035416" static="0" type="number">0</variable>
         <comment>Spieler</comment>
         <variable comment="Leben des Spielers" constant="0" name="health" sid="1331733605004022" static="0" type="number">5</variable>
         <variable comment="Punktzahl des Spielers im aktuellen Level" constant="0" name="score" sid="2707918650967083" static="0" type="number">0</variable>
@@ -44,7 +45,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>Musikauswahl</comment>
+                <comment>Levelauswahl: Hintergrund &amp; Musik</comment>
                 <event-block sid="4455733025150444">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="44549909494465" type="System">
@@ -62,6 +63,9 @@
                             <param id="3" name="Volume">0</param>
                             <param id="1" name="Tag (optional)">&quot;level1&quot;</param>
                         </action>
+                        <action id="4" name="Preload" sid="7763064843067504" type="Audio">
+                            <param id="0" name="Audio file">Level2Music</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="7459748337899957">
@@ -74,7 +78,19 @@
                         <condition id="-4" name="Trigger once while true" sid="6484952160538293" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-15" name="Set visible" sid="2791192190771776" type="BackgroundLevel1">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
                         <action id="33" name="Stop all" sid="1573717333743273" type="Audio" />
+                        <action id="0" name="Play" sid="2863345532578814" type="Audio">
+                            <param id="0" name="Audio file">Level2Music</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;level2&quot;</param>
+                        </action>
+                        <action id="4" name="Preload" sid="5234206954268026" type="Audio">
+                            <param id="0" name="Audio file">Level3Music</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="782539369414789">
@@ -87,7 +103,19 @@
                         <condition id="-4" name="Trigger once while true" sid="8147526276611315" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-15" name="Set visible" sid="2775185925223762" type="BackgroundLevel2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
                         <action id="33" name="Stop all" sid="9683768260495376" type="Audio" />
+                        <action id="0" name="Play" sid="5674049339411382" type="Audio">
+                            <param id="0" name="Audio file">Level3Music</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;level3&quot;</param>
+                        </action>
+                        <action id="4" name="Preload" sid="4697030568104494" type="Audio">
+                            <param id="0" name="Audio file">Level4Music</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="5822151933639671">
@@ -100,7 +128,16 @@
                         <condition id="-4" name="Trigger once while true" sid="8277457935795769" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-15" name="Set visible" sid="4769915332630047" type="BackgroundLevel3">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
                         <action id="33" name="Stop all" sid="1049481640714216" type="Audio" />
+                        <action id="0" name="Play" sid="8399086161427955" type="Audio">
+                            <param id="0" name="Audio file">Level4Music</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;level4&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -130,7 +167,7 @@
                         </action>
                         <action id="-9" name="Set value" sid="6486667934961636" type="System">
                             <param id="0" name="Variable">Faktor2</param>
-                            <param id="1" name="Value">random(10,60)</param>
+                            <param id="1" name="Value">random(30,80)</param>
                         </action>
                         <action id="-9" name="Set value" sid="8983942963170054" type="System">
                             <param id="0" name="Variable">randomPowerUp</param>
@@ -140,7 +177,7 @@
                             <param id="0" name="Object to create">Ball</param>
                             <param id="1" name="Layer">0</param>
                             <param id="2" name="X">random(1280)</param>
-                            <param id="3" name="Y">-200</param>
+                            <param id="3" name="Y">-250</param>
                         </action>
                         <action id="-9" name="Set value" sid="8530282069620552" type="System">
                             <param id="0" name="Variable">Size</param>
@@ -943,6 +980,19 @@
                             </conditions>
                             <actions />
                             <sub-events>
+                                <comment>falls Spielende</comment>
+                                <event-block sid="1867307002010814">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="4592368532431309" type="System">
+                                            <param id="0" name="Variable">level</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="2526106882347701" type="Continue" />
+                                    </actions>
+                                </event-block>
                                 <comment>OnClick</comment>
                                 <event-block sid="6932506078169444">
                                     <conditions>
@@ -956,6 +1006,18 @@
                                         </action>
                                         <action id="-16" name="Set opacity" sid="4703935764514572" type="Continue">
                                             <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="3337863083432016" type="Box">
+                                            <param id="0" name="X">640</param>
+                                            <param id="1" name="Y">540</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="9490948136727634" type="Box">
+                                            <param id="0" name="Width">100</param>
+                                            <param id="1" name="Height">100</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="4233292207786471" type="Box">
+                                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                                            <param id="1" name="From">0</param>
                                         </action>
                                         <action id="-9" name="Destroy" sid="3479546608227325" type="Ball" />
                                         <action id="-9" name="Set value" sid="6520066523511172" type="System">
@@ -1013,51 +1075,6 @@
                                             <param id="1" name="Visibility">0</param>
                                         </action>
                                     </actions>
-                                    <sub-events>
-                                        <comment>Wahl des nächsten Levels</comment>
-                                        <event-block sid="4277790283091325">
-                                            <conditions>
-                                                <condition id="-14" name="Compare variable" sid="7175169692148017" type="System">
-                                                    <param id="0" name="Variable">level</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">2</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-2" name="Go to layout" sid="8580532893451768" type="System">
-                                                    <param id="0" name="Layout">Level2Layout</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="6819490555424965">
-                                            <conditions>
-                                                <condition id="-14" name="Compare variable" sid="1517244624514265" type="System">
-                                                    <param id="0" name="Variable">level</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">3</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-2" name="Go to layout" sid="6373629946382655" type="System">
-                                                    <param id="0" name="Layout">Level3Layout</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="2626552486166808">
-                                            <conditions>
-                                                <condition id="-14" name="Compare variable" sid="9435798655535107" type="System">
-                                                    <param id="0" name="Variable">level</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">4</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-2" name="Go to layout" sid="9446960582600527" type="System">
-                                                    <param id="0" name="Layout">Level4Layout</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
