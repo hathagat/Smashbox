@@ -232,9 +232,6 @@
                                 <action id="-16" name="Set opacity" sid="2121039839372873" type="MenuStart">
                                     <param id="0" name="Opacity">100</param>
                                 </action>
-                                <action id="-16" name="Wait" sid="5011910574472758" type="System">
-                                    <param id="0" name="Seconds">0.3</param>
-                                </action>
                                 <action id="-25" name="Go to layout (by name)" sid="8804487023472019" type="System">
                                     <param id="0" name="Layout">&quot;GameLayout&quot;</param>
                                 </action>
@@ -252,9 +249,6 @@
                                 </action>
                                 <action id="-16" name="Set opacity" sid="1634942638867013" type="MenuOptions">
                                     <param id="0" name="Opacity">100</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="2564896446437859" type="System">
-                                    <param id="0" name="Seconds">0.3</param>
                                 </action>
                                 <action id="-4" name="Set layer visible" sid="9027026085650765" type="System">
                                     <param id="0" name="Layer">0</param>
@@ -278,9 +272,6 @@
                                 </action>
                                 <action id="-16" name="Set opacity" sid="9497957168414066" type="MenuCredits">
                                     <param id="0" name="Opacity">100</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="836906965859806" type="System">
-                                    <param id="0" name="Seconds">0.3</param>
                                 </action>
                                 <action id="-4" name="Set layer visible" sid="815431000890239" type="System">
                                     <param id="0" name="Layer">0</param>
