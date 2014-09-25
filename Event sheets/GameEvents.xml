@@ -23,7 +23,7 @@
         <variable constant="0" name="windDirection" sid="6456750564936836" static="0" type="number">1</variable>
         <variable comment="PowerUp - Sprungfeder" constant="0" name="sprungFeder" sid="8425970525424586" static="0" type="number">0</variable>
         <variable constant="0" name="Move" sid="8015923349809461" static="0" type="number">0</variable>
-        <event-group collapsed="1" description="" sid="4036447261798035" title="Start">
+        <event-group description="" sid="4036447261798035" title="Start">
             <sub-events>
                 <event-block sid="1325874222155458">
                     <conditions>
@@ -886,16 +886,16 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="46516115064031">
+                <event-block sid="1724857289945849">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="7008474000058312" type="System">
+                        <condition id="-14" name="Compare variable" sid="7294550636172675" type="System">
                             <param id="0" name="Variable">Move</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="9375683240149044" type="Handschuh" />
+                        <action id="-9" name="Destroy" sid="4279712773740589" type="Handschuh" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -934,7 +934,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="3734160441398521" title="Menü">
+        <event-group description="" sid="3734160441398521" title="Menü">
             <sub-events>
                 <comment>Spielende, falls Zeit abgelaufen oder Höchstpunktzahl erreicht</comment>
                 <event-block any="1" sid="5919766892282906">
@@ -1026,17 +1026,17 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="9774859370077561">
+                        <event-block sid="1572355186837163">
                             <conditions>
-                                <condition id="7" inverted="1" name="Cursor is over object" sid="5683465731058409" type="Mouse">
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="962697587359534" type="Mouse">
                                     <param id="0" name="Object">Continue</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="9" name="Set scale" sid="8645773802279308" type="Continue">
+                                <action id="9" name="Set scale" sid="9542590787535671" type="Continue">
                                     <param id="0" name="Scale">0.7</param>
                                 </action>
-                                <action id="-16" name="Set opacity" sid="144954734341716" type="Continue">
+                                <action id="-16" name="Set opacity" sid="8546075671888906" type="Continue">
                                     <param id="0" name="Opacity">75</param>
                                 </action>
                             </actions>
@@ -1056,17 +1056,17 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="8832342529186398">
+                        <event-block sid="3087117806175666">
                             <conditions>
-                                <condition id="7" inverted="1" name="Cursor is over object" sid="5177980900399985" type="Mouse">
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="2889916344062502" type="Mouse">
                                     <param id="0" name="Object">NewGame</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="9" name="Set scale" sid="8078979111237986" type="NewGame">
+                                <action id="9" name="Set scale" sid="3738011712793282" type="Continue">
                                     <param id="0" name="Scale">0.7</param>
                                 </action>
-                                <action id="-16" name="Set opacity" sid="3050736858489157" type="NewGame">
+                                <action id="-16" name="Set opacity" sid="8394720019925253" type="Continue">
                                     <param id="0" name="Opacity">75</param>
                                 </action>
                             </actions>
@@ -1244,6 +1244,26 @@
                                                 </action>
                                                 <action id="33" name="Stop all" sid="5307242287023831" type="Audio" />
                                                 <action id="-21" name="Reset global variables" sid="6908070179174946" type="System" />
+                                                <action id="-15" name="Set visible" sid="6997400028626432" type="BackgroundLevel1">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="1438663423957636" type="BackgroundLevel2">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="5328668200049407" type="BackgroundLevel3">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="8903924669573237" type="BackgroundLevel4">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-4" name="Set layer visible" sid="9692508275340002" type="System">
+                                                    <param id="0" name="Layer">0</param>
+                                                    <param id="1" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-4" name="Set layer visible" sid="2643460945046477" type="System">
+                                                    <param id="0" name="Layer">1</param>
+                                                    <param id="1" name="Visibility">0</param>
+                                                </action>
                                                 <action id="-25" name="Go to layout (by name)" sid="6580287429460353" type="System">
                                                     <param id="0" name="Layout">&quot;MenuLayout&quot;</param>
                                                 </action>
