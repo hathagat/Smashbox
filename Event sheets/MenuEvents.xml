@@ -22,9 +22,6 @@
                         <action id="4" name="Preload" sid="3240435735469904" type="Audio">
                             <param id="0" name="Audio file">Leve1Music</param>
                         </action>
-                        <action id="-16" name="Wait" sid="9159480685805311" type="System">
-                            <param id="0" name="Seconds">2</param>
-                        </action>
                         <action id="9" name="Set scale" sid="323995611828394" type="MenuStart">
                             <param id="0" name="Scale">0.7</param>
                         </action>
@@ -36,6 +33,9 @@
                         </action>
                         <action id="9" name="Set scale" sid="8371683421154195" type="MenuBack">
                             <param id="0" name="Scale">0.7</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="9159480685805311" type="System">
+                            <param id="0" name="Seconds">2</param>
                         </action>
                     </actions>
                 </event-block>
@@ -226,12 +226,6 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="9" name="Set scale" sid="5595289001943784" type="MenuStart">
-                                    <param id="0" name="Scale">0.9</param>
-                                </action>
-                                <action id="-16" name="Set opacity" sid="2121039839372873" type="MenuStart">
-                                    <param id="0" name="Opacity">100</param>
-                                </action>
                                 <action id="-25" name="Go to layout (by name)" sid="8804487023472019" type="System">
                                     <param id="0" name="Layout">&quot;GameLayout&quot;</param>
                                 </action>
@@ -244,12 +238,6 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="9" name="Set scale" sid="4657184319768803" type="MenuOptions">
-                                    <param id="0" name="Scale">0.9</param>
-                                </action>
-                                <action id="-16" name="Set opacity" sid="1634942638867013" type="MenuOptions">
-                                    <param id="0" name="Opacity">100</param>
-                                </action>
                                 <action id="-4" name="Set layer visible" sid="9027026085650765" type="System">
                                     <param id="0" name="Layer">0</param>
                                     <param id="1" name="Visibility">0</param>
@@ -267,12 +255,6 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="9" name="Set scale" sid="5012857557764784" type="MenuCredits">
-                                    <param id="0" name="Scale">0.9</param>
-                                </action>
-                                <action id="-16" name="Set opacity" sid="9497957168414066" type="MenuCredits">
-                                    <param id="0" name="Opacity">100</param>
-                                </action>
                                 <action id="-4" name="Set layer visible" sid="815431000890239" type="System">
                                     <param id="0" name="Layer">0</param>
                                     <param id="1" name="Visibility">0</param>
