@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MenuEvents</name>
+    <events>
+        <event-group collapsed="1" description="" sid="9536648373955383" title="StartUp">
+            <sub-events>
+                <event-block sid="8801415922619759">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="6492072928077617" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Set scale" sid="6301591016036732" type="Logo">
+                            <param id="0" name="Scale">1.5</param>
+                        </action>
+                        <action id="0" name="Play" sid="2513464852962135" type="Audio">
+                            <param id="0" name="Audio file">MenuMusic</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;menu&quot;</param>
+                        </action>
+                        <action id="4" name="Preload" sid="3240435735469904" type="Audio">
+                            <param id="0" name="Audio file">Leve1Music</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="323995611828394" type="MenuStart">
+                            <param id="0" name="Scale">0.7</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="8145451972649979" type="MenuOptions">
+                            <param id="0" name="Scale">0.7</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="3297821704894642" type="MenuCredits">
+                            <param id="0" name="Scale">0.7</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="8371683421154195" type="MenuBack">
+                            <param id="0" name="Scale">0.7</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="9159480685805311" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3883732461853357">
+                    <conditions>
+                        <condition id="-7" name="Compare time" sid="3714546682892885" type="System">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Time (seconds)">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="8070401306663128">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="7429626121894767" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="4456797955113784" type="Logo">
+                                    <param id="0" name="Instance variable">Size</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="3163055556437831" type="Logo">
+                                    <param id="0" name="X">Logo.X-2</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="6062433475473972" type="Logo">
+                                    <param id="0" name="Scale">logo.Size</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="3043880264693927" type="Logo">
+                                    <param id="0" name="Instance variable">Size</param>
+                                    <param id="1" name="Value">logo.Size - 0.003</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="1777624033510993" type="MenuOverlay">
+                                    <param id="0" name="Opacity">MenuOverlay.Opacity - 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="9223465367791828" title="MouseOver">
+            <sub-events>
+                <event-block sid="3996850212141223">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1766188629061127" type="Logo">
+                            <param id="0" name="Instance variable">Size</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7380572125425913">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="892398063364789" type="Mouse">
+                                    <param id="0" name="Object">MenuStart</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="6370780305690281" type="MenuStart">
+                                    <param id="0" name="Scale">0.9</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="6757549669234061" type="MenuStart">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1855551906657949">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="4624501333320223" type="Mouse">
+                                    <param id="0" name="Object">MenuOptions</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="3918967910644705" type="MenuOptions">
+                                    <param id="0" name="Scale">0.9</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="4139296560545896" type="MenuOptions">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5992845230970029">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="2913354896136817" type="Mouse">
+                                    <param id="0" name="Object">MenuCredits</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="7239745608970999" type="MenuCredits">
+                                    <param id="0" name="Scale">0.9</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="8476301194681863" type="MenuCredits">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9521386776655325">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="6327537068824646" type="Mouse">
+                                    <param id="0" name="Object">MenuBack</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="4586238087368314" type="MenuBack">
+                                    <param id="0" name="Scale">0.9</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="150680673251218">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="5737988590869187" type="Mouse">
+                                    <param id="0" name="Object">MenuStart</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="2120463637107847" type="MenuStart">
+                                    <param id="0" name="Scale">0.7</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="1504378336353396" type="MenuStart">
+                                    <param id="0" name="Opacity">75</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2595216607123044">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="716127699391907" type="Mouse">
+                                    <param id="0" name="Object">MenuOptions</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="4460291821928977" type="MenuOptions">
+                                    <param id="0" name="Scale">0.7</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="1864299681689517" type="MenuOptions">
+                                    <param id="0" name="Opacity">75</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6502014464183152">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="8367827118278088" type="Mouse">
+                                    <param id="0" name="Object">MenuCredits</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="2325786967185659" type="MenuCredits">
+                                    <param id="0" name="Scale">0.7</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="7908373889385321" type="MenuCredits">
+                                    <param id="0" name="Opacity">75</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1707127147494637">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="7196739725290363" type="Mouse">
+                                    <param id="0" name="Object">MenuBack</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="5627982602340345" type="MenuBack">
+                                    <param id="0" name="Scale">0.7</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="9725250754174079" title="OnClick">
+            <sub-events>
+                <event-block sid="3285276994832408">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8011867027296769" type="Logo">
+                            <param id="0" name="Instance variable">Size</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9179912083684152">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="542559396815315" type="Touch">
+                                    <param id="0" name="Object">MenuStart</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-25" name="Go to layout (by name)" sid="8804487023472019" type="System">
+                                    <param id="0" name="Layout">&quot;GameLayout&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4727283455440204">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="8556244927498265" type="Touch">
+                                    <param id="0" name="Object">MenuOptions</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="9027026085650765" type="System">
+                                    <param id="0" name="Layer">0</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="324050641019613" type="System">
+                                    <param id="0" name="Layer">1</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9359311997790542">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="9776215861690372" type="Touch">
+                                    <param id="0" name="Object">MenuCredits</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="815431000890239" type="System">
+                                    <param id="0" name="Layer">0</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="3619059287137901" type="System">
+                                    <param id="0" name="Layer">2</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9773695453125128">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="7172679958807087" type="Touch">
+                                    <param id="0" name="Object">MenuBack</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="451479962264291" type="System">
+                                    <param id="0" name="Layer">1</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="2273815406462845" type="System">
+                                    <param id="0" name="Layer">2</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="7827423764430037" type="System">
+                                    <param id="0" name="Layer">0</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

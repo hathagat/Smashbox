@@ -181,7 +181,7 @@
                 </instance>
                 <instance type="MenuOptionsText" uid="80">
                     <properties>
-                        <text>Hilfetext etc.</text>
+                        <text>Bewegung</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Kristen ITC,-48,400,0</font>
                         <color>102,204,255</color>
@@ -194,11 +194,440 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>424</x>
-                        <y>173</y>
+                        <x>44</x>
+                        <y>25</y>
                         <z>0</z>
-                        <width>440</width>
-                        <height>186</height>
+                        <width>285</width>
+                        <height>74</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Tastatur" uid="15">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>83</x>
+                        <y>325</y>
+                        <z>0</z>
+                        <width>72</width>
+                        <height>402</height>
+                        <depth>0</depth>
+                        <hotspotX>0.513888896</hotspotX>
+                        <hotspotY>0.50248754</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionsText2" uid="16">
+                    <properties>
+                        <text>Hoch</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-40,700,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>135</x>
+                        <y>128</y>
+                        <z>0</z>
+                        <width>125</width>
+                        <height>61</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionsText3" uid="18">
+                    <properties>
+                        <text>Runter</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-40,700,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>135</x>
+                        <y>210</y>
+                        <z>0</z>
+                        <width>161</width>
+                        <height>62</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionsText4" uid="22">
+                    <properties>
+                        <text>Rechts</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-40,700,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>135</x>
+                        <y>374</y>
+                        <z>0</z>
+                        <width>297</width>
+                        <height>66</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionsText5" uid="23">
+                    <properties>
+                        <text>Links</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-40,700,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>135</x>
+                        <y>292</y>
+                        <z>0</z>
+                        <width>154</width>
+                        <height>60</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionsText6" uid="24">
+                    <properties>
+                        <text>Power Ups</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-48,700,0</font>
+                        <color>96,198,249</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>693</x>
+                        <y>28</y>
+                        <z>0</z>
+                        <width>277</width>
+                        <height>76</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionsStandardBall" uid="27">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>493</x>
+                        <y>165</y>
+                        <z>0</z>
+                        <width>81.137748718</width>
+                        <height>77.892234802</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionsText7" uid="28">
+                    <properties>
+                        <text>Standard - Der Spieler erhält Punkte für gefressene Bälle. Sollte der Ball größer sein als Smashbox, wird ein Leben abgezogen.</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-23,700,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>564</x>
+                        <y>126</y>
+                        <z>0</z>
+                        <width>656</width>
+                        <height>209</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionSlowMotion" uid="29">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>492</x>
+                        <y>286</y>
+                        <z>0</z>
+                        <width>81.138000488</width>
+                        <height>77.891998291</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionsText7" uid="30">
+                    <properties>
+                        <text>Titan - Smashbox erhält eine Rüstung aus Titan und wird eine Zeit lang immun gegen jeglichen Schaden.</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-23,700,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>563</x>
+                        <y>246</y>
+                        <z>0</z>
+                        <width>656</width>
+                        <height>120</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionsText7" uid="32">
+                    <properties>
+                        <text>SlowMotion - Irgendwas stimmt nicht ... die Zeit vergeht wesentlich langsamer als sonst.</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-23,700,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>562</x>
+                        <y>365</y>
+                        <z>0</z>
+                        <width>656</width>
+                        <height>120</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionSlowMotionBall" uid="31">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>492.496582031</x>
+                        <y>401.503295898</y>
+                        <z>0</z>
+                        <width>81.138000488</width>
+                        <height>77.891998291</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionsFederBall" uid="33">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>496</x>
+                        <y>515</y>
+                        <z>0</z>
+                        <width>81.138000488</width>
+                        <height>77.891998291</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionsText7" uid="35">
+                    <properties>
+                        <text>Sprungfeder - Smashbox verliert die Fähigkeit zu fliegen und kann sich nur noch mit Hilfe einer Sprungfeder fortbewegen.</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-23,700,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>559</x>
+                        <y>477</y>
+                        <z>0</z>
+                        <width>656</width>
+                        <height>120</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionsOrkanBall" uid="36">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>497</x>
+                        <y>636</y>
+                        <z>0</z>
+                        <width>81.138000488</width>
+                        <height>77.891998291</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionsText7" uid="37">
+                    <properties>
+                        <text>Orkan - Ein Sturm braut sich zusammen. Ob die Bälle genauso fallen wie zuvor?</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-23,700,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>557</x>
+                        <y>597</y>
+                        <z>0</z>
+                        <width>656</width>
+                        <height>120</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuOptionsText4" uid="39">
+                    <properties>
+                        <text>Pause</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-40,700,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>135</x>
+                        <y>455</y>
+                        <z>0</z>
+                        <width>297</width>
+                        <height>66</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -279,7 +708,7 @@
                 </instance>
                 <instance type="MenuCreditsText3" uid="72">
                     <properties>
-                        <text>Christoph Manske Norman Nusse</text>
+                        <text>Christoph Manske</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Kristen ITC,-37,400,0</font>
                         <color>102,204,255</color>
@@ -287,7 +716,7 @@
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
+                        <line-height>5</line-height>
                     </properties>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -295,8 +724,8 @@
                         <x>60</x>
                         <y>250</y>
                         <z>0</z>
-                        <width>460</width>
-                        <height>110</height>
+                        <width>467</width>
+                        <height>52</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -387,7 +816,7 @@
                 </instance>
                 <instance type="MenuCreditsText7" uid="76">
                     <properties>
-                        <text>hier AudioCredits</text>
+                        <text>freesoundtrackmusic.com</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Kristen ITC,-37,400,0</font>
                         <color>102,204,255</color>
@@ -403,8 +832,8 @@
                         <x>750</x>
                         <y>250</y>
                         <z>0</z>
-                        <width>460</width>
-                        <height>70</height>
+                        <width>475</width>
+                        <height>52</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -484,6 +913,60 @@
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuCreditsText3" uid="38">
+                    <properties>
+                        <text>Norman Nusse</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-37,400,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>5</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>60</x>
+                        <y>300</y>
+                        <z>0</z>
+                        <width>467</width>
+                        <height>52</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuCreditsText10" uid="40">
+                    <properties>
+                        <text>soundbible.com</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Kristen ITC,-37,400,0</font>
+                        <color>102,204,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>750</x>
+                        <y>300</y>
+                        <z>0</z>
+                        <width>467</width>
+                        <height>52</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
