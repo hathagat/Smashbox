@@ -361,6 +361,28 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
+                <instance type="BackgroundMenu" uid="41">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>640</x>
+                        <y>360</y>
+                        <z>0</z>
+                        <width>1280</width>
+                        <height>720</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
                 <instance type="BallMenu" uid="14">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -383,7 +405,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="BackgroundMenu" uid="13">
+                <instance type="BackgroundMenuWon" uid="13">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -432,7 +454,7 @@
                         <text> Gesamtpunkte: </text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Kristen ITC,-48,400,0</font>
-                        <color>102,204,255</color>
+                        <color>153,102,0</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
@@ -442,8 +464,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>428</x>
-                        <y>277</y>
+                        <x>431</x>
+                        <y>255</y>
                         <z>0</z>
                         <width>481</width>
                         <height>88</height>
@@ -489,11 +511,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>130</x>
+                        <x>120</x>
                         <y>360</y>
                         <z>0</z>
-                        <width>250</width>
-                        <height>222</height>
+                        <width>240</width>
+                        <height>213</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.501408458</hotspotY>
@@ -506,7 +528,7 @@
                         <text> dieses Level: </text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Kristen ITC,-37,400,0</font>
-                        <color>102,204,255</color>
+                        <color>153,102,0</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
@@ -516,8 +538,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>428</x>
-                        <y>367</y>
+                        <x>431</x>
+                        <y>345</y>
                         <z>0</z>
                         <width>444</width>
                         <height>74</height>
@@ -577,7 +599,7 @@
                         <text> Punktzahl:    Restzeit: </text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Kristen ITC,-29,400,0</font>
-                        <color>102,204,255</color>
+                        <color>153,102,0</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
@@ -587,8 +609,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>440</x>
-                        <y>422</y>
+                        <x>443</x>
+                        <y>400</y>
                         <z>0</z>
                         <width>444</width>
                         <height>74</height>
@@ -604,7 +626,7 @@
                         <text> ___________________________</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Kristen ITC,-32,400,0</font>
-                        <color>102,204,255</color>
+                        <color>153,102,0</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
@@ -614,8 +636,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>428</x>
-                        <y>379</y>
+                        <x>431</x>
+                        <y>357</y>
                         <z>0</z>
                         <width>467</width>
                         <height>74</height>

@@ -139,7 +139,7 @@
                             <point x="0.00333333" y="0.5" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.486667">
                         <collision-poly>
                             <point x="0.15" y="0.15" />
                             <point x="0.5" y="0.00333333" />
@@ -151,7 +151,7 @@
                             <point x="0.00333333" y="0.5" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                    <frame duration="1" hotspotX="0.496667" hotspotY="0.5">
                         <collision-poly>
                             <point x="0.15" y="0.15" />
                             <point x="0.5" y="0.00333333" />
@@ -593,18 +593,18 @@
         <object-type name="Strich" sid="6385685696218638">
             <plugin id="Text" />
         </object-type>
-        <object-type name="BackgroundMenu" sid="4549910057420068">
+        <object-type name="BackgroundMenuWon" sid="4549910057420068">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="707986478458914" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
-                            <point x="0.210156" y="0.373611" />
-                            <point x="0.5" y="0.173611" />
-                            <point x="0.825781" y="0.309722" />
-                            <point x="0.825" y="0.688889" />
-                            <point x="0.5" y="0.856944" />
-                            <point x="0.20625" y="0.633333" />
+                            <point x="0.179688" y="0.319444" />
+                            <point x="0.5" y="0.105556" />
+                            <point x="0.857031" y="0.254167" />
+                            <point x="0.853125" y="0.738889" />
+                            <point x="0.5" y="0.906944" />
+                            <point x="0.175781" y="0.6875" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -624,6 +624,156 @@
                             <point x="0.5" y="1" />
                             <point x="0.15" y="0.85" />
                             <point x="0.00333333" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Tastatur" sid="3137197361408889">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3722617918647313" speed="5">
+                    <frame duration="1" hotspotX="0.513889" hotspotY="0.502488">
+                        <collision-poly>
+                            <point x="0.166667" y="0.0298507" />
+                            <point x="0.833333" y="0.0298507" />
+                            <point x="0.861111" y="0.5" />
+                            <point x="0.777778" y="0.960199" />
+                            <point x="0.222222" y="0.960199" />
+                            <point x="0.152778" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MenuOptionsText2" sid="6199838003031851">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuOptionsText3" sid="8934481368059025">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuOptionsText4" sid="2888387056736372">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuOptionsText5" sid="4312820300810165">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuOptionsText6" sid="1089735212150398">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuOptionsStandardBall" sid="7683870483791653">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2909526617619118" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.15" y="0.15" />
+                            <point x="0.5" y="0.00333333" />
+                            <point x="0.85" y="0.15" />
+                            <point x="1" y="0.5" />
+                            <point x="0.853333" y="0.853333" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15" y="0.85" />
+                            <point x="0.00333333" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MenuOptionsText7" sid="1040268755988156">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MenuOptionSlowMotion" sid="8158171595072927">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1644488917713939" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.85" y="0.15" />
+                            <point x="1" y="0.5" />
+                            <point x="0.853333" y="0.853333" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15" y="0.85" />
+                            <point x="0.00333333" y="0.5" />
+                            <point x="0.15" y="0.15" />
+                            <point x="0.5" y="0.00333333" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MenuOptionSlowMotionBall" sid="1255128604883623">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7536954442809577" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.85" y="0.15" />
+                            <point x="1" y="0.5" />
+                            <point x="0.853333" y="0.853333" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15" y="0.85" />
+                            <point x="0.00333333" y="0.5" />
+                            <point x="0.15" y="0.15" />
+                            <point x="0.5" y="0.00333333" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MenuOptionsFederBall" sid="1843183128029467">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3410931471591365" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.85" y="0.15" />
+                            <point x="1" y="0.5" />
+                            <point x="0.853333" y="0.853333" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15" y="0.85" />
+                            <point x="0.00333333" y="0.5" />
+                            <point x="0.15" y="0.15" />
+                            <point x="0.5" y="0.00333333" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MenuOptionsOrkanBall" sid="1133583998343728">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6221920381791752" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.85" y="0.15" />
+                            <point x="1" y="0.5" />
+                            <point x="0.853333" y="0.853333" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15" y="0.85" />
+                            <point x="0.00333333" y="0.5" />
+                            <point x="0.15" y="0.15" />
+                            <point x="0.5" y="0.00333333" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MenuCreditsText10" sid="1211551269708534">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="BackgroundMenu" sid="8223957098434751">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2845226732766284" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.292969" y="0.520833" />
+                            <point x="0.5" y="0.333333" />
+                            <point x="0.739062" y="0.463889" />
+                            <point x="0.741406" y="0.540278" />
+                            <point x="0.5" y="0.906944" />
+                            <point x="0.290625" y="0.483333" />
                         </collision-poly>
                     </frame>
                 </animation>
