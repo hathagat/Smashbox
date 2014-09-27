@@ -103,11 +103,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>634.5</x>
-                        <y>362.5</y>
+                        <x>640</x>
+                        <y>360</y>
                         <z>0</z>
-                        <width>1295</width>
-                        <height>815</height>
+                        <width>1280</width>
+                        <height>720</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -349,8 +349,8 @@
         </layer>
         <layer name="MenuLayer" sid="5055525410160875">
             <initially-visible>0</initially-visible>
-            <background-color>0,0,0</background-color>
-            <transparent>1</transparent>
+            <background-color>0,102,153</background-color>
+            <transparent>0</transparent>
             <parallax>
                 <x>1</x>
                 <y>1</y>
@@ -361,7 +361,51 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="SmashedBox" uid="19">
+                <instance type="BallMenu" uid="14">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Disabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>233</x>
+                        <y>780</y>
+                        <z>0</z>
+                        <width>50</width>
+                        <height>50</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="BackgroundMenu" uid="13">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>640</x>
+                        <y>360</y>
+                        <z>0</z>
+                        <width>1280</width>
+                        <height>720</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="BoxSmashed" uid="19">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -374,8 +418,8 @@
                         <x>1075</x>
                         <y>360</y>
                         <z>0</z>
-                        <width>200</width>
-                        <height>200</height>
+                        <width>180</width>
+                        <height>180</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -398,8 +442,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>440</x>
-                        <y>280</y>
+                        <x>428</x>
+                        <y>277</y>
                         <z>0</z>
                         <width>481</width>
                         <height>88</height>
@@ -445,11 +489,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>237</x>
-                        <y>360.5</y>
+                        <x>130</x>
+                        <y>360</y>
                         <z>0</z>
-                        <width>400</width>
-                        <height>355</height>
+                        <width>250</width>
+                        <height>222</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.501408458</hotspotY>
@@ -472,8 +516,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>470</x>
-                        <y>370</y>
+                        <x>428</x>
+                        <y>367</y>
                         <z>0</z>
                         <width>444</width>
                         <height>74</height>
@@ -543,8 +587,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>490</x>
-                        <y>425</y>
+                        <x>440</x>
+                        <y>422</y>
                         <z>0</z>
                         <width>444</width>
                         <height>74</height>
@@ -570,8 +614,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>470</x>
-                        <y>382</y>
+                        <x>428</x>
+                        <y>379</y>
                         <z>0</z>
                         <width>467</width>
                         <height>74</height>

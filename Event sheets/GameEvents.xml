@@ -175,10 +175,10 @@
         </event-group>
         <event-group collapsed="1" description="" sid="794116246861827" title="Ball">
             <sub-events>
-                <variable comment="Ballgröße" constant="0" name="Size" sid="7327347868461043" static="0" type="number">0</variable>
+                <variable comment="Ballgröße" constant="0" name="size" sid="7327347868461043" static="0" type="number">0</variable>
                 <variable comment="Zufallszahl zur Bestimmung der Ballgröße" constant="0" name="randomSize" sid="643804296281566" static="0" type="number">0</variable>
-                <variable constant="0" name="Faktor1" sid="7028852875881038" static="0" type="number">0</variable>
-                <variable constant="0" name="Faktor2" sid="300484216310812" static="0" type="number">0</variable>
+                <variable constant="0" name="factor1" sid="7028852875881038" static="0" type="number">0</variable>
+                <variable constant="0" name="factor2" sid="300484216310812" static="0" type="number">0</variable>
                 <variable comment="Zufallszahl zur Erzeugung von PowerUps" constant="0" name="randomPowerUp" sid="1310668004178316" static="0" type="number">0</variable>
                 <comment>zufälliger Ballspawn</comment>
                 <event-block sid="3047021848711285">
@@ -193,11 +193,11 @@
                             <param id="1" name="Value">random(30,220)</param>
                         </action>
                         <action id="-9" name="Set value" sid="1961829694235685" type="System">
-                            <param id="0" name="Variable">Faktor1</param>
+                            <param id="0" name="Variable">factor1</param>
                             <param id="1" name="Value">random(1,1.3)</param>
                         </action>
                         <action id="-9" name="Set value" sid="6486667934961636" type="System">
-                            <param id="0" name="Variable">Faktor2</param>
+                            <param id="0" name="Variable">factor2</param>
                             <param id="1" name="Value">random(30,60)</param>
                         </action>
                         <action id="-9" name="Set value" sid="8983942963170054" type="System">
@@ -207,12 +207,12 @@
                         <action id="-3" name="Create object" sid="9057531089576223" type="System">
                             <param id="0" name="Object to create">Ball</param>
                             <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">random(150,1280)</param>
-                            <param id="3" name="Y">-75</param>
+                            <param id="2" name="X">random(-300,1580)</param>
+                            <param id="3" name="Y">-100</param>
                         </action>
                         <action id="-9" name="Set value" sid="8530282069620552" type="System">
-                            <param id="0" name="Variable">Size</param>
-                            <param id="1" name="Value">(Ball.Width * Faktor1)  + (Box.Width/randomSize)*Faktor2</param>
+                            <param id="0" name="Variable">size</param>
+                            <param id="1" name="Value">(Ball.Width * factor1)  + (Box.Width/randomSize)*factor2</param>
                         </action>
                         <action id="-7" name="Set size" sid="3117688224387814" type="Ball">
                             <param id="0" name="Width">Size</param>
@@ -250,7 +250,7 @@
                                 </action>
                                 <action id="-9" name="Set value" sid="9766012825077928" type="System">
                                     <param id="0" name="Variable">windDirection</param>
-                                    <param id="1" name="Value">round(random(1))</param>
+                                    <param id="1" name="Value">random(100)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -413,31 +413,33 @@
                             </conditions>
                             <actions />
                             <sub-events>
+                                <comment>Wind von links</comment>
                                 <event-block sid="5811619958623211">
                                     <conditions>
                                         <condition id="-14" name="Compare variable" sid="8976326542759905" type="System">
                                             <param id="0" name="Variable">windDirection</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">0</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">50</param>
                                         </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-8" name="Set angle" sid="3007313608446051" type="Ball">
-                                            <param id="0" name="Angle">random(60,140)+30</param>
+                                            <param id="0" name="Angle">random(20, 70)</param>
                                         </action>
                                     </actions>
                                 </event-block>
+                                <comment>Wind von rechts</comment>
                                 <event-block sid="4194212374896178">
                                     <conditions>
                                         <condition id="-14" name="Compare variable" sid="6459242510163789" type="System">
                                             <param id="0" name="Variable">windDirection</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">1</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">50</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-8" name="Set angle" sid="8080284428573573" type="Ball">
-                                            <param id="0" name="Angle">random(140,200)+30</param>
+                                        <action id="-8" name="Set angle" sid="7916134812458513" type="Ball">
+                                            <param id="0" name="Angle">random(110,150)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -448,13 +450,13 @@
                 <comment>Ball wird zerstört, wenn er das Spielfeld verlässt </comment>
                 <event-block any="1" sid="8746992280879468">
                     <conditions>
+                        <condition id="-2" name="Compare Y" sid="8653022040526421" type="Ball">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">-100</param>
+                        </condition>
                         <condition id="-2" name="Compare Y" sid="9748577753576999" type="Ball">
                             <param id="0" name="Comparison">4</param>
                             <param id="1" name="Y co-ordinate">800</param>
-                        </condition>
-                        <condition id="-2" name="Compare Y" sid="8653022040526421" type="Ball">
-                            <param id="0" name="Comparison">2</param>
-                            <param id="1" name="Y co-ordinate">-75</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -465,16 +467,44 @@
         </event-group>
         <event-group collapsed="1" description="" sid="673076369030064" title="Box">
             <sub-events>
+                <comment>Spielende, falls Zeit abgelaufen oder Höchstpunktzahl erreicht</comment>
+                <event-block any="1" sid="5919766892282906">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="5584332293392717" type="System">
+                            <param id="0" name="Variable">timer</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="7291084010904879" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">maxPoints</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set time scale" sid="9730032805507277" type="System">
+                            <param id="0" name="Time scale">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="896171960896145" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="3629161169067143" type="System">
+                            <param id="0" name="Layer">0</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>Kollision und Ball nicht neben der Box</comment>
                 <event-block sid="4153215555307209">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="8144525499994933" type="Box">
                             <param id="0" name="Object">Ball</param>
                         </condition>
-                        <condition id="-8" name="Compare two values" sid="5397673239147928" type="System">
-                            <param id="0" name="First value">Box.BBoxTop-(Box.Height/20)</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Second value">Ball.BBoxBottom</param>
+                        <condition id="-8" name="Compare two values" sid="3616879029239459" type="System">
+                            <param id="0" name="First value">Box.Y</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">Ball.Y + (Ball.Height/2)</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -546,7 +576,7 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <comment>Spielende</comment>
+                                <comment>Spielende, falls alle Leben verbraucht</comment>
                                 <event-block sid="4826739028613494">
                                     <conditions>
                                         <condition id="-14" name="Compare variable" sid="9392114025831969" type="System">
@@ -623,7 +653,7 @@
                                             <param id="1" name="Value">1</param>
                                         </action>
                                         <action id="-16" name="Wait" sid="78727560326405" type="System">
-                                            <param id="0" name="Seconds">7</param>
+                                            <param id="0" name="Seconds">10</param>
                                         </action>
                                         <action id="-9" name="Set value" sid="1628700956437077" type="System">
                                             <param id="0" name="Variable">wind</param>
@@ -803,10 +833,8 @@
                 <comment>PowerUp Sprungfeder: Höhe des Box-Sprite wächst wegen der Feder</comment>
                 <event-block sid="9715916971199205">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="732778360466054" type="System">
-                            <param id="0" name="Variable">sprungFeder</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
+                        <condition id="2" name="Is playing" sid="732778360466054" type="Box">
+                            <param id="0" name="Animation">&quot;Sprungfeder&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -846,6 +874,9 @@
                         <action id="0" name="Set text" sid="5632506333486519" type="Zeit">
                             <param id="0" name="Text">&quot; Zeit: &quot; &amp; timer</param>
                         </action>
+                        <action id="-24" name="Move to top" sid="8763755951931067" type="Health" />
+                        <action id="-24" name="Move to top" sid="8921398646814103" type="Score" />
+                        <action id="-24" name="Move to top" sid="3269609674903444" type="Zeit" />
                     </actions>
                 </event-block>
                 <comment>Zeit läuft runter, sobald GetReady verschwunden</comment>
@@ -866,34 +897,6 @@
         </event-group>
         <event-group collapsed="1" description="" sid="3734160441398521" title="Menü">
             <sub-events>
-                <comment>Spielende, falls Zeit abgelaufen oder Höchstpunktzahl erreicht</comment>
-                <event-block any="1" sid="5919766892282906">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="5584332293392717" type="System">
-                            <param id="0" name="Variable">timer</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="7291084010904879" type="System">
-                            <param id="0" name="Variable">score</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">maxPoints</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-13" name="Set time scale" sid="9730032805507277" type="System">
-                            <param id="0" name="Time scale">0</param>
-                        </action>
-                        <action id="-4" name="Set layer visible" sid="896171960896145" type="System">
-                            <param id="0" name="Layer">1</param>
-                            <param id="1" name="Visibility">1</param>
-                        </action>
-                        <action id="-4" name="Set layer visible" sid="3629161169067143" type="System">
-                            <param id="0" name="Layer">0</param>
-                            <param id="1" name="Visibility">0</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <comment>Pause</comment>
                 <event-block sid="5389893225485144">
                     <conditions>
@@ -919,13 +922,28 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Menü ist sichtbar</comment>
                 <event-block sid="2810773192723191">
                     <conditions>
                         <condition id="-9" name="Layer is visible" sid="8638279160731736" type="System">
                             <param id="0" name="Layer">1</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-2" name="Set Y" sid="3092190616529368" type="BallMenu">
+                            <param id="0" name="Y">BallMenu.Y+2</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="1666753584504065" type="BackgroundMenu" />
+                        <action id="-24" name="Move to top" sid="8334007311212676" type="GameOver" />
+                        <action id="-24" name="Move to top" sid="15818104074108" type="Logo" />
+                        <action id="-24" name="Move to top" sid="3626538114543421" type="BoxSmashed" />
+                        <action id="-24" name="Move to top" sid="7854243872592346" type="ScoreFinal" />
+                        <action id="-24" name="Move to top" sid="4456231447117084" type="LevelScore" />
+                        <action id="-24" name="Move to top" sid="9747755702100725" type="Strich" />
+                        <action id="-24" name="Move to top" sid="927095773638222" type="LevelTimeScore" />
+                        <action id="-24" name="Move to top" sid="4423972570075064" type="Continue" />
+                        <action id="-24" name="Move to top" sid="121768669618971" type="NewGame" />
+                    </actions>
                     <sub-events>
                         <event-block sid="9523913604033046">
                             <conditions>
@@ -964,6 +982,49 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                        <comment>Hintergrundbälle</comment>
+                        <variable constant="0" name="ballSpawn" sid="9535641433568312" static="0" type="number">0</variable>
+                        <event-block sid="8188898597677913">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="9129187437348258" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="7608481694289034" type="System">
+                                    <param id="0" name="Variable">ballSpawn</param>
+                                    <param id="1" name="Value">random(100)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="846504266673611">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="6154079397643699" type="System">
+                                            <param id="0" name="Variable">ballSpawn</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">95</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="2624073570075984" type="System">
+                                            <param id="0" name="Object to create">BallMenu</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="X">random(1280)</param>
+                                            <param id="3" name="Y">-50</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="370417296251169">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="1008924584673593" type="BallMenu">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="Y co-ordinate">800</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="3317580415794845" type="BallMenu" />
+                            </actions>
                         </event-block>
                         <comment>MouseOver</comment>
                         <event-block sid="8658683535059241">
@@ -1018,10 +1079,10 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="9" name="Set scale" sid="3738011712793282" type="Continue">
+                                <action id="9" name="Set scale" sid="4386377678154803" type="NewGame">
                                     <param id="0" name="Scale">0.7</param>
                                 </action>
-                                <action id="-16" name="Set opacity" sid="8394720019925253" type="Continue">
+                                <action id="-16" name="Set opacity" sid="4162770922614353" type="NewGame">
                                     <param id="0" name="Opacity">75</param>
                                 </action>
                             </actions>
@@ -1036,7 +1097,10 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-15" name="Set visible" sid="2606702381083103" type="SmashedBox">
+                                <action id="-15" name="Set visible" sid="2606702381083103" type="BoxSmashed">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="5532692746005069" type="BackgroundMenu">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
                             </actions>
@@ -1062,7 +1126,10 @@
                                             <param id="0" name="Variable">pause</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
-                                        <action id="-15" name="Set visible" sid="599267984315462" type="SmashedBox">
+                                        <action id="-15" name="Set visible" sid="599267984315462" type="BoxSmashed">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="275787554569566" type="BackgroundMenu">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
                                         <action id="-4" name="Set layer visible" sid="1005920612363524" type="System">
@@ -1177,15 +1244,29 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-9" name="Destroy" sid="2526106882347701" type="Continue" />
                                         <action id="-15" name="Set visible" sid="1926151454946827" type="GameOver">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
                                         <action id="-15" name="Set visible" sid="6662359131806754" type="NewGame">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
-                                        <action id="-9" name="Destroy" sid="2526106882347701" type="Continue" />
                                     </actions>
                                     <sub-events>
+                                        <event-block sid="6781843176848513">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="8643460273294265" type="System">
+                                                    <param id="0" name="Variable">health</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-15" name="Set visible" sid="6184145121841853" type="BackgroundMenu">
+                                                    <param id="0" name="Visibility">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
                                         <comment>OnClick</comment>
                                         <event-block sid="8262073073941225">
                                             <conditions>
@@ -1210,6 +1291,15 @@
                                                 </action>
                                                 <action id="-15" name="Set visible" sid="8903924669573237" type="BackgroundLevel4">
                                                     <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="1438960528969543" type="BackgroundMenu">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="5253359832719082" type="GameOver">
+                                                    <param id="0" name="Visibility">0</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="4588491577788247" type="NewGame">
+                                                    <param id="0" name="Visibility">0</param>
                                                 </action>
                                                 <action id="-4" name="Set layer visible" sid="9692508275340002" type="System">
                                                     <param id="0" name="Layer">0</param>
