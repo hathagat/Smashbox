@@ -15,7 +15,7 @@
     <layers>
         <layer name="MenuLayer" sid="1134835633719184">
             <initially-visible>1</initially-visible>
-            <background-color>0,0,0</background-color>
+            <background-color>0,102,153</background-color>
             <transparent>0</transparent>
             <parallax>
                 <x>1</x>
@@ -145,8 +145,8 @@
         </layer>
         <layer name="OptionsLayer" sid="2253249269253107">
             <initially-visible>0</initially-visible>
-            <background-color>0,0,0</background-color>
-            <transparent>1</transparent>
+            <background-color>0,102,153</background-color>
+            <transparent>0</transparent>
             <parallax>
                 <x>1</x>
                 <y>1</y>
@@ -211,8 +211,8 @@
         </layer>
         <layer name="CreditsLayer" sid="6784350528887107">
             <initially-visible>0</initially-visible>
-            <background-color>0,0,0</background-color>
-            <transparent>1</transparent>
+            <background-color>0,102,153</background-color>
+            <transparent>0</transparent>
             <parallax>
                 <x>1</x>
                 <y>1</y>
