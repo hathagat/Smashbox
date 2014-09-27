@@ -19,7 +19,7 @@
         <variable comment="PowerUp - Unsterblichkeit" constant="0" name="unsterblich" sid="3933892937373019" static="0" type="number">0</variable>
         <variable comment="PowerUp - SlowMotion" constant="0" name="slowMotion" sid="7772844996600292" static="0" type="number">0</variable>
         <variable comment="PowerUp - Wind" constant="0" name="wind" sid="5851434311782495" static="0" type="number">0</variable>
-        <variable comment="Windrichtung" constant="0" name="windDirection" sid="6456750564936836" static="0" type="number">1</variable>
+        <variable constant="0" name="windDirection" sid="6456750564936836" static="0" type="number">1</variable>
         <variable comment="PowerUp - Sprungfeder" constant="0" name="sprungFeder" sid="8425970525424586" static="0" type="number">0</variable>
         <event-group collapsed="1" description="" sid="4036447261798035" title="Start">
             <sub-events>
@@ -173,7 +173,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="794116246861827" title="Ball">
+        <event-group description="" sid="794116246861827" title="Ball">
             <sub-events>
                 <variable comment="Ballgröße" constant="0" name="size" sid="7327347868461043" static="0" type="number">0</variable>
                 <variable comment="Zufallszahl zur Bestimmung der Ballgröße" constant="0" name="randomSize" sid="643804296281566" static="0" type="number">0</variable>
@@ -465,7 +465,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="673076369030064" title="Box">
+        <event-group description="" sid="673076369030064" title="Box">
             <sub-events>
                 <comment>Spielende, falls Zeit abgelaufen oder Höchstpunktzahl erreicht</comment>
                 <event-block any="1" sid="5919766892282906">
@@ -933,8 +933,7 @@
                         <action id="-2" name="Set Y" sid="3092190616529368" type="BallMenu">
                             <param id="0" name="Y">BallMenu.Y+2</param>
                         </action>
-                        <action id="-24" name="Move to top" sid="1041088894778155" type="BackgroundMenu" />
-                        <action id="-24" name="Move to top" sid="1666753584504065" type="BackgroundMenuWon" />
+                        <action id="-24" name="Move to top" sid="1666753584504065" type="BackgroundMenu" />
                         <action id="-24" name="Move to top" sid="8334007311212676" type="GameOver" />
                         <action id="-24" name="Move to top" sid="15818104074108" type="Logo" />
                         <action id="-24" name="Move to top" sid="3626538114543421" type="BoxSmashed" />
@@ -985,7 +984,7 @@
                             </sub-events>
                         </event-block>
                         <comment>Hintergrundbälle</comment>
-                        <variable comment="Häufigkeit eines Ballspawns" constant="0" name="ballSpawn" sid="9535641433568312" static="0" type="number">0</variable>
+                        <variable constant="0" name="ballSpawn" sid="9535641433568312" static="0" type="number">0</variable>
                         <event-block sid="8188898597677913">
                             <conditions>
                                 <condition id="-1" name="Every tick" sid="9129187437348258" type="System" />
@@ -1101,7 +1100,7 @@
                                 <action id="-15" name="Set visible" sid="2606702381083103" type="BoxSmashed">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
-                                <action id="-15" name="Set visible" sid="5532692746005069" type="BackgroundMenuWon">
+                                <action id="-15" name="Set visible" sid="5532692746005069" type="BackgroundMenu">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
                             </actions>
@@ -1130,7 +1129,7 @@
                                         <action id="-15" name="Set visible" sid="599267984315462" type="BoxSmashed">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
-                                        <action id="-15" name="Set visible" sid="275787554569566" type="BackgroundMenuWon">
+                                        <action id="-15" name="Set visible" sid="275787554569566" type="BackgroundMenu">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
                                         <action id="-4" name="Set layer visible" sid="1005920612363524" type="System">
@@ -1164,28 +1163,19 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Movement" id="0" name="Set speed" sid="380710356853525" type="Ball">
-                                            <param id="0" name="Speed">400</param>
-                                        </action>
-                                        <action id="-9" name="Destroy" sid="3479546608227325" type="Ball" />
-                                        <action behavior="Platform" id="11" name="Set enabled" sid="7656631812999745" type="Box">
-                                            <param id="0" name="State">0</param>
-                                        </action>
-                                        <action behavior="8Direction" id="8" name="Set enabled" sid="158132712270793" type="Box">
-                                            <param id="0" name="State">1</param>
-                                        </action>
-                                        <action id="4" name="Set animation" sid="4233292207786471" type="Box">
-                                            <param id="0" name="Animation">&quot;Default&quot;</param>
-                                            <param id="1" name="From">0</param>
+                                        <action id="-3" name="Set position" sid="3337863083432016" type="Box">
+                                            <param id="0" name="X">640</param>
+                                            <param id="1" name="Y">540</param>
                                         </action>
                                         <action id="-7" name="Set size" sid="9490948136727634" type="Box">
                                             <param id="0" name="Width">100</param>
                                             <param id="1" name="Height">100</param>
                                         </action>
-                                        <action id="-3" name="Set position" sid="3337863083432016" type="Box">
-                                            <param id="0" name="X">640</param>
-                                            <param id="1" name="Y">540</param>
+                                        <action id="4" name="Set animation" sid="4233292207786471" type="Box">
+                                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                                            <param id="1" name="From">0</param>
                                         </action>
+                                        <action id="-9" name="Destroy" sid="3479546608227325" type="Ball" />
                                         <action id="-9" name="Set value" sid="6520066523511172" type="System">
                                             <param id="0" name="Variable">finalScore</param>
                                             <param id="1" name="Value">finalScore + score + timer</param>
@@ -1272,7 +1262,7 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="-15" name="Set visible" sid="6184145121841853" type="BackgroundMenuWon">
+                                                <action id="-15" name="Set visible" sid="6184145121841853" type="BackgroundMenu">
                                                     <param id="0" name="Visibility">0</param>
                                                 </action>
                                             </actions>
@@ -1288,6 +1278,8 @@
                                                 <action id="-13" name="Set time scale" sid="4729676761967009" type="System">
                                                     <param id="0" name="Time scale">1</param>
                                                 </action>
+                                                <action id="33" name="Stop all" sid="5307242287023831" type="Audio" />
+                                                <action id="-21" name="Reset global variables" sid="6908070179174946" type="System" />
                                                 <action id="-15" name="Set visible" sid="6997400028626432" type="BackgroundLevel1">
                                                     <param id="0" name="Visibility">1</param>
                                                 </action>
@@ -1300,7 +1292,7 @@
                                                 <action id="-15" name="Set visible" sid="8903924669573237" type="BackgroundLevel4">
                                                     <param id="0" name="Visibility">1</param>
                                                 </action>
-                                                <action id="-15" name="Set visible" sid="1438960528969543" type="BackgroundMenuWon">
+                                                <action id="-15" name="Set visible" sid="1438960528969543" type="BackgroundMenu">
                                                     <param id="0" name="Visibility">1</param>
                                                 </action>
                                                 <action id="-15" name="Set visible" sid="5253359832719082" type="GameOver">
@@ -1309,8 +1301,6 @@
                                                 <action id="-15" name="Set visible" sid="4588491577788247" type="NewGame">
                                                     <param id="0" name="Visibility">0</param>
                                                 </action>
-                                                <action id="33" name="Stop all" sid="5307242287023831" type="Audio" />
-                                                <action id="-21" name="Reset global variables" sid="6908070179174946" type="System" />
                                                 <action id="-4" name="Set layer visible" sid="9692508275340002" type="System">
                                                     <param id="0" name="Layer">0</param>
                                                     <param id="1" name="Visibility">1</param>
