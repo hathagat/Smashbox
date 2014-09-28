@@ -60,10 +60,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>640</x>
-                        <y>414</y>
+                        <y>360</y>
                         <z>0</z>
                         <width>1280</width>
-                        <height>908</height>
+                        <height>720</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -429,7 +429,7 @@
                 </instance>
                 <instance type="BoxSmashed" uid="19">
                     <properties>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>

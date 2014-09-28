@@ -37,10 +37,6 @@
                         <action id="-13" name="Set time scale" sid="8533735470050073" type="System">
                             <param id="0" name="Time scale">0.001</param>
                         </action>
-                        <action id="-9" name="Set value" sid="865106246558835" type="System">
-                            <param id="0" name="Variable">timer</param>
-                            <param id="1" name="Value">100</param>
-                        </action>
                         <action id="-16" name="Wait" sid="7204965700266308" type="System">
                             <param id="0" name="Seconds">0.002</param>
                         </action>
@@ -785,6 +781,7 @@
                                             <param id="0" name="Animation">&quot;Sprungfeder&quot;</param>
                                             <param id="1" name="From">0</param>
                                         </action>
+                                        <action id="2" name="Stop" sid="3954983030605388" type="Box" />
                                         <action behavior="8Direction" id="8" name="Set enabled" sid="2453360809944922" type="Box">
                                             <param id="0" name="State">0</param>
                                         </action>
@@ -889,6 +886,7 @@
                         <condition id="-6" name="Every X seconds" sid="5970070713758294" type="System">
                             <param id="0" name="Interval (seconds)">1.0</param>
                         </condition>
+                        <condition id="-9" inverted="1" name="Is visible" sid="8191075309409748" type="GetReady" />
                     </conditions>
                     <actions>
                         <action id="-9" name="Set value" sid="7254147766930928" type="System">
@@ -1108,9 +1106,6 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-15" name="Set visible" sid="2606702381083103" type="BoxSmashed">
-                                    <param id="0" name="Visibility">0</param>
-                                </action>
                                 <action id="-15" name="Set visible" sid="5532692746005069" type="BackgroundMenuWon">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
@@ -1136,9 +1131,6 @@
                                         <action id="-9" name="Set value" sid="2264424571499171" type="System">
                                             <param id="0" name="Variable">pause</param>
                                             <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="599267984315462" type="BoxSmashed">
-                                            <param id="0" name="Visibility">1</param>
                                         </action>
                                         <action id="-15" name="Set visible" sid="275787554569566" type="BackgroundMenuWon">
                                             <param id="0" name="Visibility">1</param>
@@ -1265,9 +1257,6 @@
                                     </conditions>
                                     <actions>
                                         <action id="-9" name="Destroy" sid="2526106882347701" type="Continue" />
-                                        <action id="-15" name="Set visible" sid="1926151454946827" type="GameOver">
-                                            <param id="0" name="Visibility">1</param>
-                                        </action>
                                         <action id="-15" name="Set visible" sid="6662359131806754" type="NewGame">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
@@ -1284,6 +1273,12 @@
                                             <actions>
                                                 <action id="-15" name="Set visible" sid="6184145121841853" type="BackgroundMenuWon">
                                                     <param id="0" name="Visibility">0</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="4511188347360857" type="BoxSmashed">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="1926151454946827" type="GameOver">
+                                                    <param id="0" name="Visibility">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -1315,6 +1310,9 @@
                                                 </action>
                                                 <action id="-15" name="Set visible" sid="1438960528969543" type="BackgroundMenuWon">
                                                     <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="6642412988398025" type="BoxSmashed">
+                                                    <param id="0" name="Visibility">0</param>
                                                 </action>
                                                 <action id="-15" name="Set visible" sid="5253359832719082" type="GameOver">
                                                     <param id="0" name="Visibility">0</param>
