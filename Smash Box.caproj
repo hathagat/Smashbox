@@ -790,6 +790,9 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="MenuCreditsText12" sid="1194359323807594">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">
