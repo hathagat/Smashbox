@@ -779,6 +779,17 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="MenuCreditsText11" sid="9102462384370162">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="NewGame2" sid="7836890521333431">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8347289406060516" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">

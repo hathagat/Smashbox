@@ -1058,10 +1058,13 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="1509765855002688">
+                        <event-block any="1" sid="1509765855002688">
                             <conditions>
                                 <condition id="7" name="Cursor is over object" sid="7181280602179531" type="Mouse">
                                     <param id="0" name="Object">NewGame</param>
+                                </condition>
+                                <condition id="7" name="Cursor is over object" sid="7968768227428624" type="Mouse">
+                                    <param id="0" name="Object">NewGame2</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -1077,6 +1080,9 @@
                             <conditions>
                                 <condition id="7" inverted="1" name="Cursor is over object" sid="2889916344062502" type="Mouse">
                                     <param id="0" name="Object">NewGame</param>
+                                </condition>
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="6155536321204163" type="Mouse">
+                                    <param id="0" name="Object">NewGame2</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -1278,10 +1284,13 @@
                                             </actions>
                                         </event-block>
                                         <comment>OnClick</comment>
-                                        <event-block sid="8262073073941225">
+                                        <event-block any="1" sid="8262073073941225">
                                             <conditions>
                                                 <condition id="3" name="On touched object" sid="9288919599514505" type="Touch">
                                                     <param id="0" name="Object">NewGame</param>
+                                                </condition>
+                                                <condition id="3" name="On touched object" sid="4002467462470573" type="Touch">
+                                                    <param id="0" name="Object">NewGame2</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
