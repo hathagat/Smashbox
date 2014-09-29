@@ -801,6 +801,20 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Story" sid="9267185490590675">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Kapitel1" pingpong="0" repeatcount="1" repeatto="0" sid="9639350996091279" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501389" />
+                </animation>
+                <animation framecount="1" loop="0" name="Kapitel2" pingpong="0" repeatcount="1" repeatto="0" sid="9375351675957913" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501389" />
+                </animation>
+                <animation framecount="1" loop="0" name="Kapitel3" pingpong="0" repeatcount="1" repeatto="0" sid="1192647542591456" speed="5">
+                    <frame duration="1" hotspotX="0.500781" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">
