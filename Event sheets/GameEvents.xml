@@ -31,24 +31,57 @@
                         <condition id="-4" name="Trigger once while true" sid="9956382245633157" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-13" name="Set time scale" sid="8533735470050073" type="System">
+                            <param id="0" name="Time scale">0.0001</param>
+                        </action>
                         <action id="-15" name="Set visible" sid="6968175576661882" type="GetReady">
                             <param id="0" name="Visibility">1</param>
                         </action>
-                        <action id="-13" name="Set time scale" sid="8533735470050073" type="System">
-                            <param id="0" name="Time scale">0.001</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="7204965700266308" type="System">
-                            <param id="0" name="Seconds">0.002</param>
-                        </action>
-                        <action id="-13" name="Set time scale" sid="3200901620360597" type="System">
-                            <param id="0" name="Time scale">1</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="1820942018921651" type="GetReady">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="7888282431927836">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7198008541161758" type="System">
+                                    <param id="0" name="Variable">level</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="166161737901437" type="System">
+                                    <param id="0" name="Seconds">0.0002</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="1960005964115953" type="GetReady">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-13" name="Set time scale" sid="6637245514314884" type="System">
+                                    <param id="0" name="Time scale">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9037159897070966">
+                            <conditions>
+                                <condition id="-14" inverted="1" name="Compare variable" sid="5562643000342497" type="System">
+                                    <param id="0" name="Variable">level</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="6274169437933651" type="System">
+                                    <param id="0" name="Seconds">0.0006</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="4309060023484267" type="GetReady">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-13" name="Set time scale" sid="4043934742108321" type="System">
+                                    <param id="0" name="Time scale">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
-                <comment>Levelauswahl: Hintergrund &amp; Musik</comment>
+                <comment>Levelauswahl: Story, Hintergrund &amp; Musik</comment>
                 <event-block sid="4455733025150444">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="44549909494465" type="System">
@@ -95,9 +128,6 @@
                         <action behavior="Movement" id="0" name="Set speed" sid="3316488238835856" type="Ball">
                             <param id="0" name="Speed">400</param>
                         </action>
-                        <action id="-15" name="Set visible" sid="2791192190771776" type="BackgroundLevel1">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
                         <action id="33" name="Stop all" sid="1573717333743273" type="Audio" />
                         <action id="0" name="Play" sid="2863345532578814" type="Audio">
                             <param id="0" name="Audio file">Level2Music</param>
@@ -107,6 +137,22 @@
                         </action>
                         <action id="4" name="Preload" sid="5234206954268026" type="Audio">
                             <param id="0" name="Audio file">Level3Music</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="2791192190771776" type="BackgroundLevel1">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3636271833117614" type="Story">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="9823451865774632" type="Story">
+                            <param id="0" name="Animation">&quot;Kapitel1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="1309604883131453" type="System">
+                            <param id="0" name="Seconds">0.0004</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3581929336020448" type="Story">
+                            <param id="0" name="Visibility">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -127,9 +173,6 @@
                         <action behavior="Movement" id="0" name="Set speed" sid="3046019413947128" type="Ball">
                             <param id="0" name="Speed">500</param>
                         </action>
-                        <action id="-15" name="Set visible" sid="2775185925223762" type="BackgroundLevel2">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
                         <action id="33" name="Stop all" sid="9683768260495376" type="Audio" />
                         <action id="0" name="Play" sid="5674049339411382" type="Audio">
                             <param id="0" name="Audio file">Level3Music</param>
@@ -139,6 +182,22 @@
                         </action>
                         <action id="4" name="Preload" sid="4697030568104494" type="Audio">
                             <param id="0" name="Audio file">Level4Music</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="2775185925223762" type="BackgroundLevel2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="165430290978061" type="Story">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="2344652380996398" type="Story">
+                            <param id="0" name="Animation">&quot;Kapitel2&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="8866221758852543" type="System">
+                            <param id="0" name="Seconds">0.0004</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="9605278080116289" type="Story">
+                            <param id="0" name="Visibility">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -159,15 +218,28 @@
                         <action behavior="Movement" id="0" name="Set speed" sid="2130077227163362" type="Ball">
                             <param id="0" name="Speed">500</param>
                         </action>
-                        <action id="-15" name="Set visible" sid="4769915332630047" type="BackgroundLevel3">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
                         <action id="33" name="Stop all" sid="1049481640714216" type="Audio" />
                         <action id="0" name="Play" sid="8399086161427955" type="Audio">
                             <param id="0" name="Audio file">Level4Music</param>
                             <param id="2" name="Loop">1</param>
                             <param id="3" name="Volume">0</param>
                             <param id="1" name="Tag (optional)">&quot;level4&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="4769915332630047" type="BackgroundLevel3">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="501122818169851" type="Story">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="8453907502603823" type="Story">
+                            <param id="0" name="Animation">&quot;Kapitel3&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="7675820176090286" type="System">
+                            <param id="0" name="Seconds">0.0004</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="2132748042904944" type="Story">
+                            <param id="0" name="Visibility">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -878,6 +950,8 @@
                         <action id="-24" name="Move to top" sid="8763755951931067" type="Health" />
                         <action id="-24" name="Move to top" sid="8921398646814103" type="Score" />
                         <action id="-24" name="Move to top" sid="3269609674903444" type="Zeit" />
+                        <action id="-24" name="Move to top" sid="1976326536198855" type="GetReady" />
+                        <action id="-24" name="Move to top" sid="6554657292156073" type="Story" />
                     </actions>
                 </event-block>
                 <comment>Zeit läuft runter, sobald GetReady verschwunden</comment>
